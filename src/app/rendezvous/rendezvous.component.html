@@ -1,0 +1,135 @@
+<!-- bain-et-cuisine/src/app/rendezvous/rendezvous.component.html -->
+<main class="main">
+
+  <!-- Page Title -->
+  <div class="page-title light-background">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+      <h1 class="mb-2 mb-lg-0">Prendre un Rendez-vous</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a routerLink="/">Accueil</a></li>
+          <li class="current">Rendez-vous</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
+
+  <!-- Rendezvous Section -->
+  <section id="rendezvous" class="contact-2 section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="contact-form-wrapper">
+                    <h2 class="text-center mb-4">Planifiez Votre Visite</h2>
+                    <p class="text-center mb-5">Remplissez le formulaire ci-dessous pour réserver une consultation personnalisée avec nos experts en design de salle de bain et cuisine.</p>
+
+                    <form action="#" method="post" class="php-email-form">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-with-icon">
+                                        <i class="bi bi-person"></i>
+                                        <input type="text" class="form-control" name="name" placeholder="Votre Nom Complet" required="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-with-icon">
+                                        <i class="bi bi-envelope"></i>
+                                        <input type="email" class="form-control" name="email" placeholder="Adresse E-mail" required="">
+                                    </div>
+                                </div>
+                            </div>
+
+                             <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-with-icon">
+                                        <i class="bi bi-telephone"></i>
+                                        <input type="tel" class="form-control" name="phone" placeholder="Numéro de Téléphone" required="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                  <div class="input-with-icon">
+                                    <i class="bi bi-text-left message-icon"></i>
+                                    <textarea class="form-control" name="message" placeholder="Décrivez brièvement votre projet ou vos questions..." style="height: 120px" required=""></textarea>
+                                  </div>
+                                </div>
+                            </div>
+
+                            <!-- Calendar Selector -->
+                            <div class="col-12">
+                                <h3 class="calendar-title text-center">Choisissez une date</h3>
+                                <div class="calendar-container">
+                                    <div class="calendar-header">
+                                        <button type="button" class="nav-btn prev-month">&lt;</button>
+                                        <div class="current-month">Octobre 2025</div>
+                                        <button type="button" class="nav-btn next-month">&gt;</button>
+                                    </div>
+                                    <div class="calendar-grid">
+                                        <div class="day-name">Dim</div>
+                                        <div class="day-name">Lun</div>
+                                        <div class="day-name">Mar</div>
+                                        <div class="day-name">Mer</div>
+                                        <div class="day-name">Jeu</div>
+                                        <div class="day-name">Ven</div>
+                                        <div class="day-name">Sam</div>
+                                        <!-- Dates for October 2025 -->
+                                        <div class="day prev-month">28</div>
+                                        <div class="day prev-month">29</div>
+                                        <div class="day prev-month">30</div>
+                                        <div class="day">1</div>
+                                        <div class="day">2</div>
+                                        <div class="day">3</div>
+                                        <div class="day">4</div>
+                                        <div class="day">5</div>
+                                        <div class="day">6</div>
+                                        <div class="day today">7</div>
+                                        <div class="day">8</div>
+                                        <div class="day selected">9</div>
+                                        <div class="day">10</div>
+                                        <div class="day">11</div>
+                                        <div class="day">12</div>
+                                        <div class="day">13</div>
+                                        <div class="day">14</div>
+                                        <div class="day">15</div>
+                                        <div class="day">16</div>
+                                        <div class="day">17</div>
+                                        <div class="day">18</div>
+                                        <div class="day">19</div>
+                                        <div class="day">20</div>
+                                        <div class="day">21</div>
+                                        <div class="day">22</div>
+                                        <div class="day">23</div>
+                                        <div class="day">24</div>
+                                        <div class="day">25</div>
+                                        <div class="day">26</div>
+                                        <div class="day">27</div>
+                                        <div class="day">28</div>
+                                        <div class="day">29</div>
+                                        <div class="day">30</div>
+                                        <div class="day">31</div>
+                                        <div class="day next-month">1</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Calendar Selector -->
+
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-submit">Confirmer le Rendez-vous</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </section><!-- /Rendezvous Section -->
+
+</main>

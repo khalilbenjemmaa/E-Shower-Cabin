@@ -1,0 +1,167 @@
+<!-- bain-et-cuisine/src/app/app.component.html -->
+<!-- The header and footer are now part of the main shell -->
+<header id="header" class="header sticky-top">
+  <!-- Top Bar -->
+  <div class="top-bar py-2">
+    <div class="container-fluid container-xl">
+      <div class="row align-items-center">
+        <div class="col-lg-4 d-none d-lg-flex">
+          <div class="top-bar-item">
+            <i class="bi bi-telephone-fill me-2"></i>
+            <span>Besoin d'aide? Appelez-nous: </span>
+            <a href="tel:+21671123456">+216 71 123 456</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12 text-center">
+          <div class="announcement-slider swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": 1,
+                  "direction": "vertical",
+                  "effect": "slide"
+                }
+              </script>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">🚚 Livraison gratuite sur tout le Grand Tunis</div>
+              <div class="swiper-slide">💰 Garantie de satisfaction de 30 jours.</div>
+              <div class="swiper-slide">🎁 15% de réduction sur votre première commande</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 d-none d-lg-block">
+          <div class="d-flex justify-content-end">
+            <div class="top-bar-item dropdown me-3">
+              <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="bi bi-translate me-2"></i>FR
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#"><i class="bi bi-check2 me-2 selected-icon"></i>Français</a></li>
+                <li><a class="dropdown-item" href="#">English</a></li>
+                <li><a class="dropdown-item" href="#">العربية</a></li>
+              </ul>
+            </div>
+            <div class="top-bar-item dropdown">
+              <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="bi bi-currency-exchange me-2"></i>TND
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#"><i class="bi bi-check2 me-2 selected-icon"></i>TND</a></li>
+                <li><a class="dropdown-item" href="#">EUR</a></li>
+                <li><a class="dropdown-item" href="#">USD</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <div class="main-header">
+    <div class="container-fluid container-xl">
+      <div class="d-flex py-3 align-items-center justify-content-between">
+
+        <!-- Logo -->
+        <a routerLink="/" class="logo d-flex align-items-center">
+          <h1 class="sitename">Bain &amp; Cuisine</h1>
+        </a>
+
+        <!-- Search -->
+        <form class="search-form desktop-search-form">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Rechercher un produit...">
+            <button class="btn" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+
+        <!-- Actions -->
+        <div class="header-actions d-flex align-items-center justify-content-end">
+          <!-- Account, Wishlist, Cart actions here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="header-nav">
+    <div class="container-fluid container-xl position-relative">
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Accueil</a></li>
+          <li><a routerLink="/about" routerLinkActive="active">À Propos</a></li>
+          <li><a routerLink="/category" routerLinkActive="active">Cabines de Douche</a></li>
+          <li><a routerLink="/rendezvous" routerLinkActive="active">Prendre un Rendez-vous</a></li>
+          <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+</header>
+
+<!-- This router-outlet will display the content of the currently active page -->
+<router-outlet></router-outlet>
+
+<footer id="footer" class="footer dark-background">
+  <!-- Footer content remains largely the same, but you can update contact info -->
+  <div class="footer-main">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-widget footer-about">
+            <a routerLink="/" class="logo">
+              <span class="sitename">Bain &amp; Cuisine</span>
+            </a>
+            <p>Votre partenaire de confiance pour tous vos projets de rénovation de salle de bain et de cuisine en Tunisie.</p>
+          </div>
+        </div>
+        <!-- Other footer columns -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-widget">
+            <h4>Informations de Contact</h4>
+            <div class="footer-contact">
+              <div class="contact-item">
+                <i class="bi bi-geo-alt"></i>
+                <span>12 Rue de l'Innovation, Ariana, Tunisie</span>
+              </div>
+              <div class="contact-item">
+                <i class="bi bi-telephone"></i>
+                <span>+216 71 123 456</span>
+              </div>
+              <div class="contact-item">
+                <i class="bi bi-envelope"></i>
+                <span>contact&#64;baincuisine.tn</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row gy-3 align-items-center">
+        <div class="col-lg-6 col-md-12">
+          <div class="copyright">
+            <p>© <span>Copyright</span> <strong class="sitename"> Bain &amp; Cuisine</strong>. Tous droits réservés.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Preloader -->
+<div id="preloader"></div>

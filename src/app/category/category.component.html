@@ -1,0 +1,95 @@
+<!-- bain-et-cuisine/src/app/category/category.component.html -->
+<main class="main">
+
+  <!-- Page Title -->
+  <div class="page-title light-background">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+      <h1 class="mb-2 mb-lg-0">Cabines de Douche</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a routerLink="/">Accueil</a></li>
+          <li class="current">Catégorie</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-4 sidebar">
+
+        <div class="widgets-container">
+
+          <!-- Product Categories Widget -->
+          <div class="product-categories-widget widget-item">
+            <h3 class="widget-title">Catégories</h3>
+            <ul class="category-tree list-unstyled mb-0">
+              <!-- Categories can be listed here -->
+              <li class="category-item">
+                <a href="#" class="category-link">Cabines Complètes</a>
+              </li>
+              <li class="category-item">
+                <a href="#" class="category-link">Parois de Douche</a>
+              </li>
+              <li class="category-item">
+                <a href="#" class="category-link">Receveurs</a>
+              </li>
+              <li class="category-item">
+                <a href="#" class="category-link">Accessoires</a>
+              </li>
+            </ul>
+
+          </div><!--/Product Categories Widget -->
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-8">
+
+        <!-- Category Product List Section -->
+        <section id="category-product-list" class="category-product-list section">
+
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row g-4">
+              <!-- Product 1 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" data-aos="zoom-in">
+                  <div class="product-image">
+                    <img src="assets/img/bain/photo-1723639904787-df424a3c6e1d.avif" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/1">Cabine d'Angle 'Clarté'</a></h4>
+                    <div class="product-meta">
+                      <div class="product-price">1,250 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- More products here -->
+
+            </div>
+
+          </div>
+
+        </section><!-- /Category Product List Section -->
+
+      </div>
+
+    </div>
+  </div>
+
+</main>

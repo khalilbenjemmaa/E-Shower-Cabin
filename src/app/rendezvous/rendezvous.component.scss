@@ -1,0 +1,118 @@
+// bain-et-cuisine/src/app/rendezvous/rendezvous.component.scss
+.contact-form-wrapper {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--heading-color);
+}
+
+.calendar-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background: var(--surface-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.calendar-header .current-month {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--heading-color);
+}
+
+.calendar-header .nav-btn {
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--default-color);
+    transition: all 0.3s ease;
+}
+
+.calendar-header .nav-btn:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    color: var(--accent-color);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.calendar-grid .day-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
+    padding-bottom: 0.5rem;
+}
+
+.calendar-grid .day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.calendar-grid .day:not(.prev-month):not(.next-month):hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    color: var(--accent-color);
+}
+
+.calendar-grid .day.prev-month,
+.calendar-grid .day.next-month {
+    color: color-mix(in srgb, var(--default-color), transparent 70%);
+    cursor: not-allowed;
+}
+
+.calendar-grid .day.today {
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.calendar-grid .day.selected {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    font-weight: 600;
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
