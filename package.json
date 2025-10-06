@@ -5,8 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "predeploy": "ng build --configuration production --base-href \"/E-Shower-Cabin/\"",
-    "deploy": "npx angular-cli-ghpages --dir=dist/bain-et-cuisine",
+  "predeploy": "ng build --configuration production --base-href \"/E-Shower-Cabin/\"",
+  "deploy": "npx angular-cli-ghpages --dir=dist/bain-et-cuisine/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
