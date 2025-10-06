@@ -17,7 +17,7 @@ declare var initMainScript: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
-  title = 'bain-et-cuisine';
+  title = 'cabine-de-douche';
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
