@@ -1,0 +1,433 @@
+// About Page - Modern Black & White Piano Theme
+
+/* Hero Section */
+.about-hero {
+  background-image: url('/assets/img/bain/photo-1729073376204-5d7d25b9226f.avif');
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 0;
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.about-hero:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.75));
+  z-index: 1;
+}
+
+.about-hero .hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.about-hero .hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #fff !important;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.about-hero .hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #fff !important;
+  opacity: 0.95;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* Hero CTA Buttons - Piano Style */
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-cta .btn {
+  padding: 1rem 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  border: 3px solid #fff !important;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Both buttons start white with black text */
+.hero-cta .btn-primary,
+.hero-cta .btn-outline {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+/* Piano effect on hover */
+.hero-cta .btn-primary:hover {
+  background: #fff !important;
+  color: #000 !important;
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4);
+}
+
+.hero-cta .btn-primary:hover ~ .btn-outline {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.hero-cta .btn-outline:hover {
+  background: #fff !important;
+  color: #000 !important;
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4);
+}
+
+.hero-cta:has(.btn-outline:hover) .btn-primary {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+/* Features Section */
+.about-features {
+  padding: 5rem 0;
+  background: #fff;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.feature:hover {
+  border-color: #000;
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  background: #000;
+}
+
+.feature:hover .feature-icon,
+.feature:hover h4,
+.feature:hover p {
+  color: #fff !important;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: #000 !important;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  transition: color 0.4s ease;
+}
+
+.feature h4 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.02em;
+  color: #000 !important;
+  text-transform: uppercase;
+  transition: color 0.4s ease;
+}
+
+.feature p {
+  color: #666 !important;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+  transition: color 0.4s ease;
+}
+
+/* Team Section */
+.about-team {
+  padding: 5rem 0;
+  background: #fafafa;
+}
+
+.about-team h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.about-team p {
+  color: #666;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-list li {
+  padding: 0.75rem 0;
+  padding-left: 2rem;
+  position: relative;
+  color: #000;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.about-list li::before {
+  content: '▪';
+  position: absolute;
+  left: 0;
+  color: #000;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.about-list li strong {
+  color: #000;
+  font-weight: 700;
+}
+
+.team-grid {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  text-align: center;
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.4s ease;
+  min-width: 200px;
+  flex: 1;
+  max-width: 220px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.team-member:hover {
+  background: #000;
+  border-color: #000;
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.team-member:hover h5,
+.team-member:hover p {
+  color: #fff !important;
+}
+
+.team-member:hover img {
+  filter: grayscale(0%) !important;
+  border-color: #fff;
+}
+
+.team-member img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1.25rem;
+  border: 3px solid #000;
+  filter: grayscale(100%);
+  transition: all 0.4s ease;
+}
+
+.team-member h5 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  color: #000 !important;
+  transition: color 0.4s ease;
+  letter-spacing: -0.01em;
+}
+
+.team-member p {
+  font-size: 0.875rem;
+  color: #666 !important;
+  margin: 0;
+  transition: color 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* CTA Section */
+.about-cta {
+  background: #000;
+  padding: 5rem 0;
+  margin-top: 0;
+  position: relative;
+}
+
+.about-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.02) 30%, rgba(255,255,255,0.02) 70%, transparent 70%);
+  background-size: 100px 100px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.about-cta .cta-inner {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about-cta h3 {
+  color: #fff !important;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.about-cta p {
+  color: #fff !important;
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  opacity: 0.95;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA Buttons - Piano Style */
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-actions .btn {
+  padding: 1rem 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  border: 3px solid #fff !important;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Both buttons start white with black text */
+.cta-actions .btn-primary,
+.cta-actions .btn-outline {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+/* Piano effect on hover */
+.cta-actions .btn-primary:hover {
+  background: #fff !important;
+  color: #000 !important;
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4);
+}
+
+.cta-actions .btn-primary:hover ~ .btn-outline {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.cta-actions .btn-outline:hover {
+  background: #fff !important;
+  color: #000 !important;
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4);
+}
+
+.cta-actions:has(.btn-outline:hover) .btn-primary {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-hero {
+    padding: 4rem 0;
+    min-height: 400px;
+  }
+
+  .about-hero .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .about-cta h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    flex-direction: column;
+  }
+
+  .hero-cta,
+  .cta-actions {
+    flex-direction: column;
+  }
+
+  .hero-cta .btn,
+  .cta-actions .btn {
+    width: 100%;
+  }
+
+  .about-hero .hero-title {
+    font-size: 2rem;
+  }
+
+  .about-cta h3 {
+    font-size: 1.75rem;
+  }
+}

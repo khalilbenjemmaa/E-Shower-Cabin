@@ -1,12 +1,18 @@
 // bain-et-cuisine/src/app/rendezvous/rendezvous.component.scss
+// Modern Black & White Piano Theme
+
 .contact-form-wrapper {
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fff;
 }
 
 .contact-form-wrapper:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #000;
 }
 
 .calendar-title {
@@ -14,18 +20,25 @@
     font-weight: 600;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
-    color: var(--heading-color);
+    color: #000;
+    letter-spacing: -0.02em;
 }
 
 .calendar-container {
     max-width: 400px;
     margin: 0 auto;
-    background: var(--surface-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    border-radius: 16px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     animation: fadeIn 0.5s ease-out;
+    transition: all 0.3s ease;
+}
+
+.calendar-container:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: #000;
 }
 
 .calendar-header {
@@ -33,29 +46,33 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #000;
 }
 
 .calendar-header .current-month {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--heading-color);
+    color: #000;
+    letter-spacing: -0.01em;
 }
 
 .calendar-header .nav-btn {
     background: none;
-    border: 1px solid transparent;
-    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
     width: 40px;
     height: 40px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     cursor: pointer;
-    color: var(--default-color);
+    color: #000;
     transition: all 0.3s ease;
 }
 
 .calendar-header .nav-btn:hover {
-    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-    color: var(--accent-color);
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
 }
 
 .calendar-grid {
@@ -66,10 +83,12 @@
 }
 
 .calendar-grid .day-name {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: color-mix(in srgb, var(--default-color), transparent 40%);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #000;
     padding-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .calendar-grid .day {
@@ -77,33 +96,38 @@
     align-items: center;
     justify-content: center;
     height: 40px;
-    border-radius: 50%;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s ease;
     font-weight: 500;
+    border: 1px solid transparent;
+    font-size: 0.9rem;
 }
 
 .calendar-grid .day:not(.prev-month):not(.next-month):hover {
-    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-    color: var(--accent-color);
+    background-color: #f5f5f5;
+    color: #000;
+    border-color: #000;
 }
 
 .calendar-grid .day.prev-month,
 .calendar-grid .day.next-month {
-    color: color-mix(in srgb, var(--default-color), transparent 70%);
+    color: #bbb;
     cursor: not-allowed;
 }
 
 .calendar-grid .day.today {
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
+    border: 2px solid #000;
+    color: #000;
+    font-weight: 600;
 }
 
 .calendar-grid .day.selected {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
+    background-color: #000;
+    color: #fff;
     font-weight: 600;
-    box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-color), transparent 70%);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    border-color: #000;
 }
 
 @keyframes fadeIn {

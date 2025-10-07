@@ -1,0 +1,206 @@
+<!-- Contact Page - Modern Black & White Piano Theme -->
+<main class="main contact-page">
+
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="hero-inner">
+      <div class="hero-content container">
+        <h1 class="hero-title">Contactez-Nous</h1>
+        <p class="hero-subtitle">Nous sommes là pour répondre à toutes vos questions. N'hésitez pas à nous contacter!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Info & Form Section -->
+  <section class="contact-section section">
+    <div class="container">
+      <div class="row gy-4">
+        
+        <!-- Contact Information -->
+        <div class="col-lg-5">
+          <div class="contact-info-wrapper">
+            <h2 class="section-title">Nos Coordonnées</h2>
+            
+            <div class="contact-info-item">
+              <div class="info-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div class="info-content">
+                <h4>Adresse</h4>
+                <p>12 Rue de l'Innovation<br>Ariana 2080, Tunisie</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="info-icon">
+                <i class="bi bi-telephone"></i>
+              </div>
+              <div class="info-content">
+                <h4>Téléphone</h4>
+                <p><a href="tel:+21671123456">+216 71 123 456</a></p>
+                <p><a href="tel:+21620123456">+216 20 123 456</a></p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="info-icon">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <div class="info-content">
+                <h4>Email</h4>
+                <p><a href="mailto:contact@cabinededouche.tn">contact&#64;cabinededouche.tn</a></p>
+                <p><a href="mailto:info@cabinededouche.tn">info&#64;cabinededouche.tn</a></p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="info-icon">
+                <i class="bi bi-clock"></i>
+              </div>
+              <div class="info-content">
+                <h4>Horaires d'Ouverture</h4>
+                <p>Lundi - Vendredi: 9h00 - 18h00</p>
+                <p>Samedi: 9h00 - 14h00</p>
+                <p>Dimanche: Fermé</p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <h4>Suivez-Nous</h4>
+              <div class="social-icons">
+                <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+          <div class="contact-form-wrapper">
+            <h2 class="section-title">Envoyez-Nous un Message</h2>
+            <form (ngSubmit)="submitForm()" #contactFormElement="ngForm">
+              
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name">Nom Complet *</label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      name="name"
+                      class="form-control" 
+                      [(ngModel)]="contactForm.name"
+                      required
+                      placeholder="Votre nom">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email"
+                      class="form-control" 
+                      [(ngModel)]="contactForm.email"
+                      required
+                      placeholder="votre@email.com">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input 
+                      type="tel" 
+                      id="phone" 
+                      name="phone"
+                      class="form-control" 
+                      [(ngModel)]="contactForm.phone"
+                      placeholder="+216 XX XXX XXX">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="subject">Sujet *</label>
+                    <input 
+                      type="text" 
+                      id="subject" 
+                      name="subject"
+                      class="form-control" 
+                      [(ngModel)]="contactForm.subject"
+                      required
+                      placeholder="Sujet de votre message">
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea 
+                      id="message" 
+                      name="message"
+                      class="form-control" 
+                      rows="6"
+                      [(ngModel)]="contactForm.message"
+                      required
+                      placeholder="Votre message..."></textarea>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" [disabled]="!contactFormElement.form.valid">
+                      Envoyer le Message
+                    </button>
+                    <button type="button" class="btn btn-secondary" (click)="resetForm()">
+                      Réinitialiser
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section">
+    <div class="container-fluid p-0">
+      <div class="map-wrapper">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25546.89392883668!2d10.165881!3d36.861897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd337f5e7ef543%3A0xd671924e714a0275!2sAriana%2C%20Tunisia!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" 
+          width="100%" 
+          height="500" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="contact-cta">
+    <div class="container">
+      <div class="cta-inner">
+        <h3>Besoin d'une Installation Rapide?</h3>
+        <p>Prenez rendez-vous dès maintenant pour une consultation gratuite à domicile.</p>
+        <div class="cta-actions">
+          <a routerLink="/rendezvous" class="btn btn-primary">Prendre Rendez-vous</a>
+          <a routerLink="/category" class="btn btn-secondary">Voir Nos Produits</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>

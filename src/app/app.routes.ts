@@ -3,13 +3,17 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { RendezvousComponent } from './rendezvous/rendezvous.component'; // Import the new component
+import { RendezvousComponent } from './rendezvous/rendezvous.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'category', component: CategoryComponent },
   { path: 'product/:id', component: ProductDetailsComponent },
-  { path: 'rendezvous', component: RendezvousComponent }, // Add the new route
+  { path: 'about', component: AboutComponent },
+  { path: 'rendezvous', component: RendezvousComponent },
+  { path: 'contact', component: ContactComponent },
 
   { path: '**', redirectTo: '', pathMatch: 'full' } // Redirect any unknown URL to home
 ];

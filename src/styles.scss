@@ -1,1 +1,172 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Modern Black & White Piano Theme - Global Styles */
+
+/* Typography enhancements */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* Modern button styles */
+.btn, a.btn, button.btn {
+  border-radius: 12px !important;
+  padding: 0.875rem 2rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  border-width: 3px;
+  border-style: solid;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 1.5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary, a.btn-primary, button.btn-primary {
+  background: #000 !important;
+  border-color: #000 !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover, a.btn-primary:hover, button.btn-primary:hover {
+  background: #fff !important;
+  color: #000 !important;
+  border-color: #000 !important;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary, a.btn-secondary, button.btn-secondary {
+  background: transparent !important;
+  border-color: #000 !important;
+  color: #000 !important;
+}
+
+.btn-secondary:hover, a.btn-secondary:hover, button.btn-secondary:hover {
+  background: #000 !important;
+  color: #fff !important;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline, a.btn-outline, button.btn-outline {
+  background: transparent !important;
+  border: 3px solid currentColor !important;
+}
+
+/* White theme buttons (for dark backgrounds) */
+.btn-white, a.btn-white {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: #000 !important;
+}
+
+.btn-white:hover, a.btn-white:hover {
+  background: transparent !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.btn-outline-white, a.btn-outline-white {
+  background: transparent !important;
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.btn-outline-white:hover, a.btn-outline-white:hover {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+/* Card styles */
+.card {
+  border-radius: 0 !important;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #000;
+  transform: translateY(-4px);
+}
+
+/* Form controls */
+.form-control, .form-select {
+  border-radius: 0 !important;
+  border: 1px solid #e0e0e0;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Section spacing */
+.section {
+  padding: 4rem 0;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Modern animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Link styles */
+a {
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #666;
+}
+
+/* Selection color */
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #000;
+  color: #fff;
+}
