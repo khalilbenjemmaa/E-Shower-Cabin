@@ -57,7 +57,7 @@ export class AppComponent implements AfterViewInit {
     const input = event.target as HTMLInputElement;
     const query = input.value;
     this.searchQuery = query;
-    
+
     if (query.trim().length > 0) {
       this.searchSubject.next(query);
       this.showDropdown = true;
@@ -92,7 +92,7 @@ export class AppComponent implements AfterViewInit {
   onDocumentClick(event: MouseEvent): void {
     const targetElement = event.target as HTMLElement;
     const clickedInside = this.elementRef.nativeElement.contains(targetElement);
-    
+
     if (!clickedInside) {
       this.showDropdown = false;
     }

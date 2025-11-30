@@ -64,21 +64,21 @@
   </div> -->
 
   <!-- Main Header -->
-  <div class="main-header">
+  <div class="main-header" style="background-color: #11262B ;">
     <div class="container-fluid container-xl">
       <div class="d-flex py-3 align-items-center justify-content-between">
 
         <!-- Logo -->
         <a routerLink="/" class="logo d-flex align-items-center">
-              <img src="assets/img/logoSL.svg" alt="Logo" style="height: 50px !important; width: auto !important;">
+              <img src="assets/img/logoSL.png" alt="Logo" style="height: 50px !important; width: auto !important;">
         </a>
 
         <!-- Search -->
         <form class="search-form desktop-search-form" (submit)="onSearchSubmit($event)">
           <div class="input-group search-wrapper">
-            <input 
-              type="text" 
-              class="form-control" 
+            <input
+              type="text"
+              class="form-control"
               placeholder="Rechercher un produit..."
               [(ngModel)]="searchQuery"
               (input)="onSearchInput($event)"
@@ -87,11 +87,11 @@
             <button class="btn" type="submit">
               <i class="bi bi-search"></i>
             </button>
-            
+
             <!-- Search Dropdown -->
             <div class="search-dropdown" *ngIf="showDropdown && searchResults.length > 0">
-              <div 
-                class="search-result-item" 
+              <div
+                class="search-result-item"
                 *ngFor="let product of searchResults"
                 (click)="selectProduct(product)">
                 <div class="result-image">

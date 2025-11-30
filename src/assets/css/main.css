@@ -638,7 +638,7 @@ h6 {
 }
 
 .header .header-nav {
-  background-color: var(--accent-color);
+  background-color: #043920b3
 }
 
 @media (min-width: 1200px) {

@@ -242,7 +242,7 @@ export class ProductService {
     }
 
     const searchTerm = query.toLowerCase().trim();
-    const filtered = this.products.filter(product => 
+    const filtered = this.products.filter(product =>
       product.name.toLowerCase().includes(searchTerm) ||
       product.category.toLowerCase().includes(searchTerm) ||
       (product.description && product.description.toLowerCase().includes(searchTerm))

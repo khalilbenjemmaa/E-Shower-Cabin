@@ -21,11 +21,16 @@ export class ProductDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.productId = this.route.snapshot.paramMap.get('id');
-    if (this.productId) {
-      this.productService.getProductById(parseInt(this.productId)).subscribe(product => {
-        this.product = product;
-      });
-    }
+    // Subscribe to route parameter changes to reload product when navigating between products
+    this.route.paramMap.subscribe(params => {
+      this.productId = params.get('id');
+      if (this.productId) {
+        this.productService.getProductById(parseInt(this.productId)).subscribe(product => {
+          this.product = product;
+          // Scroll to top when product changes
+          window.scrollTo(0, 0);
+        });
+      }
+    });
   }
 }
