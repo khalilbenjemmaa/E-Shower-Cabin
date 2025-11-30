@@ -19,7 +19,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
       radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%),
       radial-gradient(circle at 80% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
     animation: pulse 4s ease-in-out infinite;
@@ -357,7 +357,7 @@
       color: #fff;
     }
 
-    // Piano Effect - When hovering secondary, primary turns black  
+    // Piano Effect - When hovering secondary, primary turns black
     .btn-secondary:not(:disabled):hover ~ .btn-primary {
       background: #000;
       color: #fff;
@@ -381,7 +381,7 @@
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
       transform: translateY(-3px);
     }
-    
+
     iframe {
       display: block;
       width: 100%;
@@ -412,7 +412,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
       radial-gradient(circle at 30% 50%, rgba(255,255,255,0.03) 0%, transparent 50%),
       radial-gradient(circle at 70% 50%, rgba(255,255,255,0.03) 0%, transparent 50%);
     animation: float 6s ease-in-out infinite;
@@ -579,7 +579,7 @@
 
   .map-section .map-wrapper {
     border-width: 3px;
-    
+
     iframe {
       height: 350px;
     }

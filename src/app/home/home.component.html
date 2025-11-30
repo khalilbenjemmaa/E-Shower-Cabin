@@ -11,7 +11,7 @@
             <p class="hero-description">Explorez nos collections exclusives pour la salle de bain. Design, qualité et innovation pour transformer votre intérieur.</p>
             <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
               <a href="#products" class="btn-primary">Voir Nos Produits</a>
-              <a href="#categories" class="btn-secondary">Parcourir les Catégories</a>
+              <a routerLink="/category" class="btn-secondary">Parcourir les Catégories</a>
             </div>
             <div class="features-list" data-aos="fade-up" data-aos-delay="300">
               <div class="feature-item">
@@ -33,7 +33,7 @@
         <div class="hero-visuals">
           <div class="product-showcase" data-aos="fade-left" data-aos-delay="200">
             <div class="product-card featured">
-              <img src="assets/img/bain/pexels-heyho-7227629.jpg" alt="Featured Product" class="img-fluid">
+              <img src="assets/img/product/25.webp" alt="Cabine de douche" class="img-fluid" loading="lazy">
               <div class="product-badge">Best Seller</div>
               <div class="product-info">
                 <h4>Cabine de Douche 'Prestige'</h4>
@@ -41,6 +41,7 @@
                   <span class="sale-price">1,899 TND</span>
                   <span class="original-price">2,500 TND</span>
                 </div>
+
               </div>
             </div>
 
@@ -48,16 +49,15 @@
           </div>
 
           <div class="floating-elements">
-            <div class="floating-icon cart" data-aos="fade-up" data-aos-delay="600">
-              <i class="bi bi-cart3"></i>
-              <span class="notification-dot">3</span>
-            </div>
-            <div class="floating-icon wishlist" data-aos="fade-up" data-aos-delay="700">
-              <i class="bi bi-heart"></i>
-            </div>
-            <div class="floating-icon search" data-aos="fade-up" data-aos-delay="800">
-              <i class="bi bi-search"></i>
-            </div>
+            <a href="https://www.facebook.com" target="_blank" class="floating-icon facebook" data-aos="fade-up" data-aos-delay="600">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="floating-icon instagram" data-aos="fade-up" data-aos-delay="700">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://wa.me/21671123456" target="_blank" class="floating-icon whatsapp" data-aos="fade-up" data-aos-delay="800">
+              <i class="bi bi-whatsapp"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -111,13 +111,13 @@
       <p>Les produits préférés de nos clients, alliant qualité et design exceptionnel.</p>
     </div><!-- End Section Title -->
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div class="row g-5">
-        <!-- Product 1: Shower Cabin -->
-        <div class="col-lg-3 col-md-6">
+      <div class="row g-5 justify-content-center">
+        <!-- Product 1 -->
+        <div class="col-lg-4 col-md-6">
           <div class="product-item">
             <div class="product-image">
               <div class="product-badge">Exclusivité</div>
-              <img src="assets/img/bain/photo-1723639904787-df424a3c6e1d.avif" alt="Cabine de douche d'angle" class="img-fluid" loading="lazy">
+              <img src="assets/img/product/1.webp" alt="Cabine de douche" class="img-fluid" loading="lazy">
               <div class="product-actions">
                 <button class="action-btn wishlist-btn"><i class="bi bi-heart"></i></button>
                 <button class="action-btn quickview-btn"><i class="bi bi-zoom-in"></i></button>
@@ -127,73 +127,77 @@
             <div class="product-info">
               <div class="product-category">Cabines de Douche</div>
               <h4 class="product-name"><a routerLink="/product/1">Cabine d'Angle 'Clarté'</a></h4>
+              <div class="product-config-icon">
+                <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                  <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                  <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                  <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                </svg>
+              </div>
               <div class="product-price">1,250 TND</div>
             </div>
           </div>
         </div>
         <!-- End Product 1 -->
 
-        <!-- Product 2: Shower Cabin -->
-        <div class="col-lg-3 col-md-6">
-            <div class="product-item">
+        <!-- Product 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="product-item">
             <div class="product-image">
-                <div class="product-badge">Exclusivité</div>
-
-                <img src="assets/img/bain/photo-1626187915749-9deea4478548.avif" alt="Cabine de douche d'angle" class="img-fluid" loading="lazy">
-                <div class="product-actions">
+              <div class="product-badge">Nouveau</div>
+              <img src="assets/img/product/5.webp" alt="Cabine de douche" class="img-fluid" loading="lazy">
+              <div class="product-actions">
                 <button class="action-btn wishlist-btn"><i class="bi bi-heart"></i></button>
                 <button class="action-btn quickview-btn"><i class="bi bi-zoom-in"></i></button>
-                </div>
-                <button class="cart-btn" routerLink="/product/2">Voir les options</button>
+              </div>
+              <button class="cart-btn" routerLink="/product/5">Voir les options</button>
             </div>
             <div class="product-info">
-                <div class="product-category">Cabines de Douche</div>
-                <h4 class="product-name"><a routerLink="/product/2">Cabine d'Angle 'Zen'</a></h4>
-                <div class="product-price">1,450 TND</div>
+              <div class="product-category">Cabines de Douche</div>
+              <h4 class="product-name"><a routerLink="/product/">Cabine d'Angle 'Zen'</a></h4>
+              <div class="product-config-icon">
+                <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                  <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                  <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                  <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                </svg>
+              </div>
+              <div class="product-price">1,450 TND</div>
             </div>
-            </div>
+          </div>
         </div>
         <!-- End Product 2 -->
-        <!-- Product 3: Shower Cabin -->
-        <div class="col-lg-3 col-md-6">
-            <div class="product-item">
+
+        <!-- Product 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="product-item">
             <div class="product-image">
-                <div class="product-badge">Nouveau</div>
-                <img src="assets/img/bain/photo-1722152753063-318cd02907b7.avif" alt="Cabine de douche d'angle" class="img-fluid" loading="lazy">
-                <div class="product-actions">
+              <div class="product-badge">Promotion</div>
+              <img src="assets/img/product/3.webp" alt="Cabine de douche" class="img-fluid" loading="lazy">
+              <div class="product-actions">
                 <button class="action-btn wishlist-btn"><i class="bi bi-heart"></i></button>
                 <button class="action-btn quickview-btn"><i class="bi bi-zoom-in"></i></button>
-                </div>
-                <button class="cart-btn" routerLink="/product/3">Voir les options</button>
+              </div>
+              <button class="cart-btn" routerLink="/product/3">Voir les options</button>
             </div>
             <div class="product-info">
-                <div class="product-category">Cabines de Douche</div>
-                <h4 class="product-name"><a routerLink="/product/3">Cabine 'Aqua'</a></h4>
-                <div class="product-price">1,100 TND</div>
+              <div class="product-category">Cabines de Douche</div>
+              <h4 class="product-name"><a routerLink="/product/3">Cabine 'Aqua'</a></h4>
+              <div class="product-config-icon">
+                <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                  <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                  <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                  <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                </svg>
+              </div>
+              <div class="product-price">1,100 TND</div>
             </div>
-            </div>
+          </div>
         </div>
         <!-- End Product 3 -->
-        <!-- Product 4: Shower Cabin -->
-        <div class="col-lg-3 col-md-6">
-            <div class="product-item">
-            <div class="product-image">
-                <div class="product-badge">Promotion</div>
-                <img src="assets/img/bain/photo-1722650269587-55ea04f0dca3.avif" alt="Cabine de douche d'angle" class="img-fluid" loading="lazy">
-                <div class="product-actions">
-                <button class="action-btn wishlist-btn"><i class="bi bi-heart"></i></button>
-                <button class="action-btn quickview-btn"><i class="bi bi-zoom-in"></i></button>
-                </div>
-                <button class="cart-btn" routerLink="/product/4">Voir les options</button>
-            </div>
-            <div class="product-info">
-                <div class="product-category">Cabines de Douche</div>
-                <h4 class="product-name"><a routerLink="/product/4">Cabine 'Élégance'</a></h4>
-                <div class="product-price">999 TND</div>
-            </div>
-            </div>
-        </div>
-        <!-- End Product 4 -->
 
       </div>
     </div>

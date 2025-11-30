@@ -15,12 +15,12 @@
   <section class="contact-section section">
     <div class="container">
       <div class="row gy-4">
-        
+
         <!-- Contact Information -->
         <div class="col-lg-5">
           <div class="contact-info-wrapper">
             <h2 class="section-title">Nos Coordonnées</h2>
-            
+
             <div class="contact-info-item">
               <div class="info-icon">
                 <i class="bi bi-geo-alt"></i>
@@ -82,16 +82,16 @@
           <div class="contact-form-wrapper">
             <h2 class="section-title">Envoyez-Nous un Message</h2>
             <form (ngSubmit)="submitForm()" #contactFormElement="ngForm">
-              
+
               <div class="row gy-3">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="name">Nom Complet *</label>
-                    <input 
-                      type="text" 
-                      id="name" 
+                    <input
+                      type="text"
+                      id="name"
                       name="name"
-                      class="form-control" 
+                      class="form-control"
                       [(ngModel)]="contactForm.name"
                       required
                       placeholder="Votre nom">
@@ -101,11 +101,11 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="email">Email *</label>
-                    <input 
-                      type="email" 
-                      id="email" 
+                    <input
+                      type="email"
+                      id="email"
                       name="email"
-                      class="form-control" 
+                      class="form-control"
                       [(ngModel)]="contactForm.email"
                       required
                       placeholder="votre@email.com">
@@ -115,11 +115,11 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="phone">Téléphone</label>
-                    <input 
-                      type="tel" 
-                      id="phone" 
+                    <input
+                      type="tel"
+                      id="phone"
                       name="phone"
-                      class="form-control" 
+                      class="form-control"
                       [(ngModel)]="contactForm.phone"
                       placeholder="+216 XX XXX XXX">
                   </div>
@@ -128,11 +128,11 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="subject">Sujet *</label>
-                    <input 
-                      type="text" 
-                      id="subject" 
+                    <input
+                      type="text"
+                      id="subject"
                       name="subject"
-                      class="form-control" 
+                      class="form-control"
                       [(ngModel)]="contactForm.subject"
                       required
                       placeholder="Sujet de votre message">
@@ -142,10 +142,10 @@
                 <div class="col-12">
                   <div class="form-group">
                     <label for="message">Message *</label>
-                    <textarea 
-                      id="message" 
+                    <textarea
+                      id="message"
                       name="message"
-                      class="form-control" 
+                      class="form-control"
                       rows="6"
                       [(ngModel)]="contactForm.message"
                       required
@@ -176,13 +176,13 @@
   <section class="map-section">
     <div class="container-fluid p-0">
       <div class="map-wrapper">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25546.89392883668!2d10.165881!3d36.861897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd337f5e7ef543%3A0xd671924e714a0275!2sAriana%2C%20Tunisia!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" 
-          width="100%" 
-          height="500" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.9510759006453!2d10.700754700000001!3d34.807172699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1301d5fc2385c6f3%3A0x9a44969e2dcbca1!2sSweet%20Lodge%20tn!5e0!3m2!1sen!2stn!4v1764540508165!5m2!1sen!2stn"
+          width="100%"
+          height="500"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>

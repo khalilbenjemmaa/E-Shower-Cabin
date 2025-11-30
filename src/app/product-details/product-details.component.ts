@@ -1,22 +1,31 @@
 // bain-et-cuisine/src/app/product-details/product-details.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ProductService, Product } from '../services/product.service';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss']
 })
-export class ProductDetailsComponent {
+export class ProductDetailsComponent implements OnInit {
   productId: string | null = null;
+  product: Product | undefined;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private productService: ProductService
+  ) {}
 
   ngOnInit() {
     this.productId = this.route.snapshot.paramMap.get('id');
-    // Here you would typically fetch product details from a service based on the productId
+    if (this.productId) {
+      this.productService.getProductById(parseInt(this.productId)).subscribe(product => {
+        this.product = product;
+      });
+    }
   }
 }

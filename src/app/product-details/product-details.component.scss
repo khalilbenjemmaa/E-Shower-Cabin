@@ -146,6 +146,18 @@
   line-height: 1.2;
 }
 
+/* Product Configuration Icon in Details Page */
+.product-config-icon {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-config-icon svg {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
 .product-rating {
   display: flex;
   align-items: center;
@@ -534,15 +546,15 @@
     padding-left: 0;
     margin-top: 2rem;
   }
-  
+
   .product-gallery {
     position: static;
   }
-  
+
   .action-buttons {
     flex-direction: column;
   }
-  
+
   .btn-wishlist {
     width: 100%;
   }
@@ -552,15 +564,15 @@
   .product-title {
     font-size: 1.75rem;
   }
-  
+
   .current-price {
     font-size: 2rem;
   }
-  
+
   .main-image {
     height: 400px;
   }
-  
+
   .gallery-thumbnails {
     grid-template-columns: repeat(3, 1fr);
   }

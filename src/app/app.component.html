@@ -70,16 +70,48 @@
 
         <!-- Logo -->
         <a routerLink="/" class="logo d-flex align-items-center">
-          <h1 class="sitename">Cabine de Douche</h1>
+              <img src="assets/img/logoSL.svg" alt="Logo" style="height: 50px !important; width: auto !important;">
         </a>
 
         <!-- Search -->
-        <form class="search-form desktop-search-form">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Rechercher un produit...">
+        <form class="search-form desktop-search-form" (submit)="onSearchSubmit($event)">
+          <div class="input-group search-wrapper">
+            <input 
+              type="text" 
+              class="form-control" 
+              placeholder="Rechercher un produit..."
+              [(ngModel)]="searchQuery"
+              (input)="onSearchInput($event)"
+              name="search"
+              autocomplete="off">
             <button class="btn" type="submit">
               <i class="bi bi-search"></i>
             </button>
+            
+            <!-- Search Dropdown -->
+            <div class="search-dropdown" *ngIf="showDropdown && searchResults.length > 0">
+              <div 
+                class="search-result-item" 
+                *ngFor="let product of searchResults"
+                (click)="selectProduct(product)">
+                <div class="result-image">
+                  <img [src]="product.image" [alt]="product.name">
+                </div>
+                <div class="result-details">
+                  <div class="result-name">{{ product.name }}</div>
+                  <div class="result-category">{{ product.category }}</div>
+                </div>
+                <div class="result-price">{{ product.price }} TND</div>
+              </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="search-dropdown" *ngIf="showDropdown && searchQuery.length > 0 && searchResults.length === 0">
+              <div class="no-results">
+                <i class="bi bi-search"></i>
+                <p>Aucun produit trouvé pour "{{ searchQuery }}"</p>
+              </div>
+            </div>
           </div>
         </form>
 
@@ -119,7 +151,7 @@
         <div class="col-lg-4 col-md-6">
           <div class="footer-widget footer-about">
             <a routerLink="/" class="logo">
-              <span class="sitename">Cabine de Douche</span>
+              <span class="sitename">Sweet Lodge</span>
             </a>
             <p>Votre partenaire de confiance pour tous vos projets de rénovation de salle de bain en Tunisie.</p>
           </div>
@@ -152,7 +184,7 @@
       <div class="row gy-3 align-items-center">
         <div class="col-lg-6 col-md-12">
           <div class="copyright">
-            <p>© <span>Copyright</span> <strong class="sitename">Cabine de Douche</strong>. Tous droits réservés.</p>
+            <p>© <span>Copyright</span> <strong class="sitename">Sweet Lodge</strong>. Tous droits réservés.</p>
           </div>
         </div>
       </div>

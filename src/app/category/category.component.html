@@ -8,7 +8,7 @@
       <nav class="breadcrumbs">
         <ol>
           <li><a routerLink="/">Accueil</a></li>
-          <li class="current">Catégorie</li>
+          <li><a routerLink="/category">Catégorie</a></li>
         </ol>
       </nav>
     </div>
@@ -56,15 +56,15 @@
             <div class="row g-4">
               <!-- Product 1 -->
               <div class="col-6 col-xl-4">
-                <div class="product-card" data-aos="zoom-in">
+                <div class="product-card" routerLink="/product/1" style="cursor: pointer;">
                   <div class="product-image">
-                    <img src="assets/img/bain/photo-1723639904787-df424a3c6e1d.avif" class="main-image img-fluid" alt="Product">
+                    <img src="assets/img/product/1.webp" class="main-image img-fluid" alt="Product">
                     <div class="product-overlay">
                       <div class="product-actions">
-                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
                           <i class="bi bi-eye"></i>
                         </button>
-                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
                           <i class="bi bi-cart-plus"></i>
                         </button>
                       </div>
@@ -72,14 +72,871 @@
                   </div>
                   <div class="product-details">
                     <div class="product-category">Cabines de Douche</div>
-                    <h4 class="product-title"><a routerLink="/product/1">Cabine d'Angle 'Clarté'</a></h4>
+                    <h4 class="product-title"><a routerLink="/product/1" (click)="$event.stopPropagation()">Cabine d'Angle 'Clarté'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
                     <div class="product-meta">
                       <div class="product-price">1,250 TND</div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- More products here -->
+
+              <!-- Product 2 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/2" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/2.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/2" (click)="$event.stopPropagation()">Cabine d'Angle 'Zen'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,450 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 3 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/3" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/3.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/3" (click)="$event.stopPropagation()">Cabine 'Aqua'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,100 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 4 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/4" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/4.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/4" (click)="$event.stopPropagation()">Cabine 'Élégance'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">999 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 5 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/5" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/5.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/5" (click)="$event.stopPropagation()">Cabine 'Prestige'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,850 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 6 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/6" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/6.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/6" (click)="$event.stopPropagation()">Cabine 'Moderne'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,350 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 7 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/7" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/7.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/7" (click)="$event.stopPropagation()">Cabine 'Luxe'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">2,100 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 8 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/8" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/8.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/8" (click)="$event.stopPropagation()">Cabine 'Compact'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">950 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 9 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/9" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/9.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/9" (click)="$event.stopPropagation()">Cabine 'Style'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,200 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 10 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/10" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/10.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/10" (click)="$event.stopPropagation()">Cabine 'Premium'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,650 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 11 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/11" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/11.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/11" (click)="$event.stopPropagation()">Cabine 'Crystal'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,550 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 12 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/12" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/12.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/12" (click)="$event.stopPropagation()">Cabine 'Horizon'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,400 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 13 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/13" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/13.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/13" (click)="$event.stopPropagation()">Cabine 'Essence'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,150 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 14 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/14" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/14.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/14" (click)="$event.stopPropagation()">Cabine 'Oasis'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,750 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 15 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/15" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/15.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/15" (click)="$event.stopPropagation()">Cabine 'Serenity'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,300 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 16 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/16" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/16.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/16" (click)="$event.stopPropagation()">Cabine 'Harmony'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,500 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 17 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/17" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/17.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/17" (click)="$event.stopPropagation()">Cabine 'Vision'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,600 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 18 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/18" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/18.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/18" (click)="$event.stopPropagation()">Cabine 'Pure'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,050 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 19 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/19" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/19.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/19" (click)="$event.stopPropagation()">Cabine 'Elite'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,950 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 20 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/20" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/20.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/20" (click)="$event.stopPropagation()">Cabine 'Nova'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,250 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 21 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/21" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/21.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/21" (click)="$event.stopPropagation()">Cabine 'Infinity'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">2,200 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 22 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/22" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/22.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/22" (click)="$event.stopPropagation()">Cabine 'Aurora'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,400 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 23 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/23" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/23.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/23" (click)="$event.stopPropagation()">Cabine 'Nexus'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,700 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 24 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/24" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/24.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/24" (click)="$event.stopPropagation()">Cabine 'Eclipse'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,900 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 25 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/25" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/25.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/25" (click)="$event.stopPropagation()">Cabine 'Zenith'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">2,300 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 26 -->
+              <div class="col-6 col-xl-4">
+                <div class="product-card" routerLink="/product/26" style="cursor: pointer;">
+                  <div class="product-image">
+                    <img src="assets/img/product/26.webp" class="main-image img-fluid" alt="Product">
+                    <div class="product-overlay">
+                      <div class="product-actions">
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="$event.stopPropagation()">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-details">
+                    <div class="product-category">Cabines de Douche</div>
+                    <h4 class="product-title"><a routerLink="/product/26" (click)="$event.stopPropagation()">Cabine 'Radiance'</a></h4>
+                    <div class="product-config-icon">
+                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10V90H80V10" stroke="#374151" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="20" y1="10" x2="80" y2="10" stroke="#3B82F6" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="3" fill="#9CA3AF"/>
+                        <text x="50" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#374151">1 Vitre</text>
+                      </svg>
+                    </div>
+                    <div class="product-meta">
+                      <div class="product-price">1,550 TND</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
             </div>
 
