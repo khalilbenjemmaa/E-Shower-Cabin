@@ -64,7 +64,7 @@
   </div> -->
 
   <!-- Main Header -->
-  <div class="main-header" style="background-color: #11262B ;">
+  <div class="main-header">
     <div class="container-fluid container-xl">
       <div class="d-flex py-3 align-items-center justify-content-between">
 
@@ -118,6 +118,7 @@
         <!-- Actions -->
         <div class="header-actions d-flex align-items-center justify-content-end">
           <!-- Account, Wishlist, Cart actions here -->
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </div>
       </div>
     </div>
@@ -128,6 +129,49 @@
     <div class="container-fluid container-xl position-relative">
       <nav id="navmenu" class="navmenu">
         <ul>
+          <!-- Mobile Search -->
+          <li class="d-xl-none p-3">
+            <form class="search-form" (submit)="onSearchSubmit($event)">
+              <div class="input-group search-wrapper">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Rechercher..."
+                  [(ngModel)]="searchQuery"
+                  (input)="onSearchInput($event)"
+                  name="searchMobile"
+                  autocomplete="off">
+                <button class="btn btn-primary" type="submit">
+                  <i class="bi bi-search"></i>
+                </button>
+
+                <!-- Search Dropdown -->
+                <div class="search-dropdown" *ngIf="showDropdown && searchResults.length > 0">
+                  <div
+                    class="search-result-item"
+                    *ngFor="let product of searchResults"
+                    (click)="selectProduct(product)">
+                    <div class="result-image">
+                      <img [src]="product.image" [alt]="product.name">
+                    </div>
+                    <div class="result-details">
+                      <div class="result-name">{{ product.name }}</div>
+                      <div class="result-category">{{ product.category }}</div>
+                    </div>
+                    <div class="result-price">{{ product.price }} TND</div>
+                  </div>
+                </div>
+
+                <!-- No Results Message -->
+                <div class="search-dropdown" *ngIf="showDropdown && searchQuery.length > 0 && searchResults.length === 0">
+                  <div class="no-results">
+                    <i class="bi bi-search"></i>
+                    <p>Aucun produit trouvé pour "{{ searchQuery }}"</p>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </li>
           <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Accueil</a></li>
           <li><a routerLink="/about" routerLinkActive="active">À propos</a></li>
           <li><a routerLink="/category" routerLinkActive="active">Cabine de Douche</a></li>

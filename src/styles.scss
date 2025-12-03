@@ -35,27 +35,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary, a.btn-primary, button.btn-primary {
-  background: #000 !important;
-  border-color: #000 !important;
+  background: #043920 !important;
+  border-color: #11262B !important;
   color: #fff !important;
 }
 
 .btn-primary:hover, a.btn-primary:hover, button.btn-primary:hover {
-  background: #fff !important;
-  color: #000 !important;
-  border-color: #000 !important;
+  background: #11262B !important;
+  color: #fff !important;
+  border-color: #043920 !important;
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary, a.btn-secondary, button.btn-secondary {
   background: transparent !important;
-  border-color: #000 !important;
-  color: #000 !important;
+  border-color: #11262B !important;
+  color: #11262B !important;
 }
 
 .btn-secondary:hover, a.btn-secondary:hover, button.btn-secondary:hover {
-  background: #000 !important;
+  background: #11262B !important;
   color: #fff !important;
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);

@@ -5,7 +5,7 @@
 // Hero Section
 .contact-hero {
   position: relative;
-  background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+  background: linear-gradient(135deg, #11262B 0%, #043920 50%, #11262B 100%);
   background-size: 200% 200%;
   animation: gradientShift 8s ease infinite;
   color: #fff;
@@ -78,7 +78,7 @@
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 2.5rem;
-    color: #000;
+    color: #11262B;
     text-transform: uppercase;
     letter-spacing: -0.02em;
   }
@@ -88,7 +88,7 @@
 .contact-info-wrapper {
   background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
   padding: 2.5rem;
-  border: 3px solid #000;
+  border: 3px solid #11262B;
   border-radius: 16px;
   height: 100%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -99,7 +99,7 @@
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    border-color: #333;
+    border-color: #11262B;
   }
 
   .contact-info-item {
@@ -121,7 +121,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #000;
+      background: #11262B;
       color: #fff;
       border-radius: 10px;
       font-size: 1.5rem;
@@ -133,7 +133,7 @@
         position: absolute;
         inset: 0;
         border-radius: 10px;
-        background: #000;
+        background: #11262B;
         animation: pulse 2s ease-in-out infinite;
         z-index: -1;
       }
@@ -145,8 +145,8 @@
 
     &:hover .info-icon {
       background: #fff;
-      color: #000;
-      border: 3px solid #000;
+      color: #11262B;
+      border: 3px solid #11262B;
       transform: scale(1.15) rotate(5deg);
 
       i {
@@ -160,7 +160,7 @@
       h4 {
         font-size: 1rem;
         font-weight: 700;
-        color: #000;
+        color: #11262B;
         margin-bottom: 0.5rem;
         text-transform: uppercase;
         letter-spacing: 0.08em;
@@ -168,7 +168,7 @@
 
       p {
         font-size: 0.95rem;
-        color: #1a1a1a;
+        color: #11262B;
         margin-bottom: 0.25rem;
         line-height: 1.6;
 
@@ -178,12 +178,12 @@
       }
 
       a {
-        color: #1a1a1a;
+        color: #11262B;
         text-decoration: none;
         transition: color 0.3s ease;
 
         &:hover {
-          color: #000;
+          color: #11262B;
           text-decoration: underline;
         }
       }
@@ -200,7 +200,7 @@
   h4 {
     font-size: 1rem;
     font-weight: 700;
-    color: #000;
+    color: #11262B;
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -218,15 +218,15 @@
     align-items: center;
     justify-content: center;
     background: #fff;
-    color: #000;
-    border: 3px solid #000;
+    color: #11262B;
+    border: 3px solid #11262B;
     border-radius: 10px;
     font-size: 1.25rem;
     text-decoration: none;
     transition: all 0.3s ease;
 
     &:hover {
-      background: #000;
+      background: #11262B;
       color: #fff;
       transform: translateY(-3px) scale(1.1);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
@@ -238,7 +238,7 @@
 .contact-form-wrapper {
   background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
   padding: 2.5rem;
-  border: 3px solid #000;
+  border: 3px solid #11262B;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -248,7 +248,7 @@
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    border-color: #333;
+    border-color: #11262B;
   }
 
   .form-group {
@@ -258,7 +258,7 @@
       display: block;
       font-size: 0.875rem;
       font-weight: 700;
-      color: #000;
+      color: #11262B;
       margin-bottom: 0.5rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -268,7 +268,7 @@
       width: 100%;
       padding: 0.75rem 1rem;
       font-size: 1rem;
-      color: #1a1a1a;
+      color: #11262B;
       background: #fff;
       border: 3px solid #e0e0e0;
       border-radius: 12px;
@@ -277,7 +277,7 @@
 
       &:focus {
         outline: none;
-        border-color: #000;
+        border-color: #11262B;
         background: #fff;
         transform: translateY(-2px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 0 0 4px rgba(0, 0, 0, 0.05);
@@ -311,7 +311,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      border: 3px solid #000;
+      border: 3px solid #11262B;
       border-radius: 12px;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -333,33 +333,33 @@
 
     .btn-primary {
       background: #fff;
-      color: #000;
+      color: #11262B;
 
       &:not(:disabled):hover {
-        background: #000;
+        background: #11262B;
         color: #fff;
       }
     }
 
     .btn-secondary {
       background: #fff;
-      color: #000;
+      color: #11262B;
 
       &:not(:disabled):hover {
-        background: #000;
+        background: #11262B;
         color: #fff;
       }
     }
 
     // Piano Effect - When hovering primary, secondary turns black
     .btn-primary:not(:disabled):hover ~ .btn-secondary {
-      background: #000;
+      background: #11262B;
       color: #fff;
     }
 
     // Piano Effect - When hovering secondary, primary turns black
     .btn-secondary:not(:disabled):hover ~ .btn-primary {
-      background: #000;
+      background: #11262B;
       color: #fff;
     }
   }
@@ -371,7 +371,7 @@
   background: #f5f5f5;
 
   .map-wrapper {
-    border: 5px solid #000;
+    border: 5px solid #11262B;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
@@ -398,7 +398,7 @@
 // CTA Section
 .contact-cta {
   padding: 80px 0;
-  background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+  background: linear-gradient(135deg, #11262B 0%, #043920 50%, #11262B 100%);
   background-size: 200% 200%;
   animation: gradientShift 10s ease infinite;
   color: #fff;
@@ -462,13 +462,13 @@
       display: inline-block;
       box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
       background: #fff !important;
-      color: #000 !important;
+      color: #11262B !important;
       position: relative;
       z-index: 1;
 
       &:hover {
         background: #fff !important;
-        color: #000 !important;
+        color: #11262B !important;
         transform: translateY(-5px) scale(1.05);
         box-shadow: 0 8px 30px rgba(255, 255, 255, 0.5);
         z-index: 2;
@@ -485,7 +485,7 @@
 
     // When primary button is hovered, change secondary appearance
     &:has(.btn-primary:hover) .btn-secondary {
-      background: #000 !important;
+      background: #11262B !important;
       color: #fff !important;
       border-color: #fff !important;
       transform: translateY(-2px);
@@ -493,7 +493,7 @@
 
     // When secondary button is hovered, change primary appearance
     &:has(.btn-secondary:hover) .btn-primary {
-      background: #000 !important;
+      background: #11262B !important;
       color: #fff !important;
       border-color: #fff !important;
       transform: translateY(-2px);

@@ -79,6 +79,18 @@ export class AppComponent implements AfterViewInit {
     this.searchQuery = '';
     this.searchResults = [];
     this.showDropdown = false;
+
+    if (isPlatformBrowser(this.platformId)) {
+      const body = document.querySelector('body');
+      if (body && body.classList.contains('mobile-nav-active')) {
+        body.classList.remove('mobile-nav-active');
+        const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+        if (mobileNavToggleBtn) {
+          mobileNavToggleBtn.classList.remove('bi-x');
+          mobileNavToggleBtn.classList.add('bi-list');
+        }
+      }
+    }
   }
 
   onSearchSubmit(event: Event): void {

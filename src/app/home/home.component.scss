@@ -18,7 +18,7 @@
 .hero .feature-item,
 .hero .feature-item *,
 .hero .hero-content > *:not(.hero-actions) {
-  color: #000 !important;
+  color: #11262B !important;
 }
 
 .hero::before {
@@ -72,7 +72,7 @@
   letter-spacing: -0.03em;
   margin-bottom: 1.5rem;
   line-height: 1.1;
-  color: #000 !important;
+  color: #11262B !important;
   animation: fadeInUp 1s ease-out;
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
@@ -83,7 +83,7 @@
   margin-bottom: 2rem;
   opacity: 0.85;
   line-height: 1.6;
-  color: #1a1a1a !important;
+  color: #11262B !important;
   animation: fadeInUp 1s ease-out 0.2s backwards;
 }
 
@@ -105,7 +105,7 @@
   border-radius: 12px;
   transition: all 0.4s ease;
   font-size: 0.875rem;
-  border: 3px solid #000 !important;
+  border: 3px solid #11262B !important;
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
@@ -114,9 +114,9 @@
 /* Piano Keys - Both buttons start black with white text */
 .hero-actions a.btn-primary,
 .hero-actions a.btn-secondary {
-  background: #000 !important;
+  background: #11262B !important;
   color: #fff !important;
-  border-color: #000 !important;
+  border-color: #11262B !important;
 }
 
 /* Ensure text color is white */
@@ -127,7 +127,7 @@
 
 /* Piano Effect: When hovering first button */
 .hero-actions a.btn-primary:hover {
-  background: #000 !important;
+  background: #11262B !important;
   color: #fff !important;
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
@@ -140,18 +140,18 @@
 /* When hovering first button, make second button white */
 .hero-actions a.btn-primary:hover ~ a.btn-secondary {
   background: #fff !important;
-  color: #000 !important;
-  border-color: #000 !important;
+  color: #11262B !important;
+  border-color: #11262B !important;
   transform: translateY(-2px);
 }
 
 .hero-actions a.btn-primary:hover ~ a.btn-secondary * {
-  color: #000 !important;
+  color: #11262B !important;
 }
 
 /* Piano Effect: When hovering second button */
 .hero-actions a.btn-secondary:hover {
-  background: #000 !important;
+  background: #11262B !important;
   color: #fff !important;
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
@@ -163,7 +163,7 @@
 
 /* When hovering second button, need to use container hover */
 .hero-actions:has(a.btn-secondary:hover) a.btn-primary {
-  background: #000 !important;
+  background: #11262B !important;
   color: #fff !important;
   border-color: #fff !important;
 }
@@ -186,17 +186,17 @@
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: #000 !important;
+  color: #11262B !important;
 }
 
 .feature-item span {
-  color: #000 !important;
+  color: #11262B !important;
 }
 
 .feature-item i {
   font-size: 1.5rem;
   opacity: 0.9;
-  color: #000 !important;
+  color: #11262B !important;
 }
 
 /* Product Showcase */
@@ -241,7 +241,7 @@
 .product-card:hover {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
   transform: translateY(-15px) scale(1.03) rotate(1deg);
-  border-color: #000;
+  border-color: #11262B;
   border-width: 2px;
 
   .product-image img {
@@ -256,14 +256,14 @@
 
 .product-card.featured {
   border-width: 2px;
-  border-color: #000;
+  border-color: #11262B;
 }
 
 .product-badge {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: #000 !important;
+  background: #11262B !important;
   color: #fff !important;
   padding: 0.5rem 1rem;
   font-size: 0.75rem;
@@ -284,7 +284,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  color: #000 !important;
+  color: #11262B !important;
 }
 
 .price {
@@ -296,7 +296,7 @@
 .sale-price {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #000 !important;
+  color: #11262B !important;
 }
 
 .original-price {
@@ -322,7 +322,7 @@
   width: 56px;
   height: 56px;
   background: #fff !important;
-  border: 2px solid #000 !important;
+  border: 2px solid #11262B !important;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -342,7 +342,7 @@
     position: absolute;
     inset: -4px;
     border-radius: 14px;
-    background: linear-gradient(45deg, #000, #333, #000);
+    background: linear-gradient(45deg, #11262B, #043920, #11262B);
     background-size: 200% 200%;
     opacity: 0;
     z-index: -1;
@@ -351,7 +351,7 @@
 }
 
 .floating-icon:hover {
-  background: #000 !important;
+  background: #11262B !important;
   transform: scale(1.25) rotate(360deg);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
   border-width: 3px;
@@ -369,7 +369,7 @@
 
 .floating-icon i {
   font-size: 1.5rem;
-  color: #000 !important;
+  color: #11262B !important;
   transition: all 0.3s ease;
 }
 
@@ -379,7 +379,7 @@
   right: -4px;
   width: 20px;
   height: 20px;
-  background: #000 !important;
+  background: #11262B !important;
   color: #fff !important;
   border-radius: 50%;
   font-size: 0.7rem;
@@ -407,7 +407,7 @@
 
 .category-featured:hover {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-  border-color: #000;
+  border-color: #11262B;
 }
 
 .category-image {
@@ -437,7 +437,7 @@
 
 .category-tag {
   display: inline-block;
-  background: #000;
+  background: #11262B;
   color: #fff;
   padding: 0.35rem 1rem;
   font-size: 0.7rem;
@@ -451,7 +451,7 @@
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #000;
+  color: #11262B;
   letter-spacing: -0.02em;
 }
 
@@ -465,13 +465,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #000;
+  color: #11262B;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 0.875rem;
   letter-spacing: 0.05em;
   transition: all 0.3s ease;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #11262B;
   padding-bottom: 0.25rem;
 }
 
@@ -501,7 +501,7 @@
 
 .category-card:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  border-color: #000;
+  border-color: #11262B;
   transform: translateY(-4px);
 }
 
@@ -526,7 +526,7 @@
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #000;
+  color: #11262B;
 }
 
 .category-card p {
@@ -539,7 +539,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #000;
+  color: #11262B;
   font-weight: 600;
   font-size: 0.875rem;
   text-transform: uppercase;

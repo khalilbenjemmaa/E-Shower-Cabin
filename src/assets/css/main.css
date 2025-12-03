@@ -23,12 +23,12 @@
   --border-radius-xl: 20px;
 }
 
-/* Global Colors - Modern Black & White Piano Theme */
+/* Global Colors - Modern Theme */
 :root {
   --background-color: #ffffff; /* Pure white background */
-  --default-color: #1a1a1a; /* Almost black text for readability */
-  --heading-color: #000000; /* Pure black for headings */
-  --accent-color: #000000; /* Pure black accent for modern look */
+  --default-color: #11262B; /* Darker header color for text */
+  --heading-color: #11262B; /* Darker header color for headings */
+  --accent-color: #043920; /* Nav color for accents */
   --surface-color: #fafafa; /* Subtle off-white for cards */
   --contrast-color: #ffffff; /* Pure white for text on black */
   --secondary-accent: #f5f5f5; /* Light gray for subtle highlights */
@@ -36,14 +36,14 @@
   --hover-bg: #f8f8f8; /* Hover background */
 }
 
-/* Nav Menu Colors - Modern Black & White Theme */
+/* Nav Menu Colors - Modern Theme */
 :root {
   --nav-color: rgba(255, 255, 255, 0.95);  /* White nav links on black background */
   --nav-hover-color: #ffffff; /* Pure white on hover */
   --nav-mobile-background-color: #ffffff; /* White mobile menu */
   --nav-dropdown-background-color: #ffffff; /* White dropdown */
-  --nav-dropdown-color: #1a1a1a; /* Almost black text in dropdown */
-  --nav-dropdown-hover-color: #000000; /* Pure black on hover */
+  --nav-dropdown-color: #11262B; /* Darker theme color in dropdown */
+  --nav-dropdown-hover-color: #043920; /* Other theme color on hover */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -234,23 +234,24 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: var(--contrast-color);
+  background-color: #11262B;
   transition: all 0.5s;
   z-index: 997;
 }
 
 .header .top-bar {
-  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+  background-color: #11262B;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 14px;
 }
 
 .header .top-bar .top-bar-item {
-  color: var(--default-color);
+  color: var(--contrast-color);
 }
 
 .header .top-bar .top-bar-item a {
-  color: var(--accent-color);
+  color: var(--contrast-color);
   text-decoration: none;
 }
 
@@ -259,13 +260,13 @@ h6 {
 }
 
 .header .top-bar .top-bar-item .selected-icon {
-  color: var(--accent-color);
+  color: var(--contrast-color);
   opacity: 1;
   width: 16px;
 }
 
 .header .top-bar .announcement-slider {
-  color: var(--accent-color);
+  color: var(--contrast-color);
   font-weight: 500;
   height: 24px;
   overflow: hidden;
@@ -330,7 +331,7 @@ h6 {
   font-size: 26px;
   margin: 0;
   font-weight: 700;
-  color: var(--heading-color);
+  color: var(--contrast-color);
 }
 
 @media (max-width: 768px) {
@@ -358,7 +359,7 @@ h6 {
   background: none;
   border: none;
   padding: 0.5rem;
-  color: var(--default-color);
+  color: var(--contrast-color);
   font-size: 15px;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -373,7 +374,7 @@ h6 {
 }
 
 .header .main-header .header-actions .header-action-btn:hover {
-  color: var(--accent-color);
+  color: color-mix(in srgb, var(--contrast-color), transparent 20%);
 }
 
 .header .main-header .header-actions .header-action-btn .badge {
@@ -597,7 +598,7 @@ h6 {
 .header .search-form .search-result-item .result-name {
   font-size: 14px;
   font-weight: 500;
-  color: #1a1a1a;
+  color: var(--default-color);
   margin-bottom: 4px;
   white-space: nowrap;
   overflow: hidden;
@@ -612,7 +613,7 @@ h6 {
 .header .search-form .search-result-item .result-price {
   font-size: 14px;
   font-weight: 600;
-  color: #000000;
+  color: var(--heading-color);
   margin-left: 12px;
   white-space: nowrap;
 }
@@ -638,7 +639,7 @@ h6 {
 }
 
 .header .header-nav {
-  background-color: #043920b3
+  background-color: #043920;
 }
 
 @media (min-width: 1200px) {
@@ -783,7 +784,7 @@ h6 {
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: var(--default-color);
+    color: var(--contrast-color);
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
