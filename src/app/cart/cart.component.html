@@ -1,0 +1,39 @@
+<div class="cart-offcanvas">
+  <div class="cart-header">
+    <h5>Votre Panier</h5>
+  </div>
+
+  <div class="cart-body" *ngIf="items.length > 0; else empty">
+    <div class="cart-item" *ngFor="let it of items">
+      <div class="img-wrap">
+        <img [src]="it.product.image" [alt]="it.product.name">
+      </div>
+      <div class="info">
+        <div class="name">{{ it.product.name }}</div>
+        <div class="meta">{{ it.product.category }}</div>
+        <div class="actions">
+          <button class="btn-ghost" (click)="decrease(it)">-</button>
+          <span class="qty">{{ it.quantity }}</span>
+          <button class="btn-ghost" (click)="increase(it)">+</button>
+          <button class="remove" (click)="remove(it)">Supprimer</button>
+        </div>
+      </div>
+      <div class="price">{{ (it.product.price * it.quantity) | number:'1.2-2' }} TND</div>
+    </div>
+
+    <div class="cart-summary">
+      <div class="row"><span>Sous-total</span><span>{{ cart.getSubtotal() | number:'1.2-2' }} TND</span></div>
+      <div class="row"><span>TVA ({{ (cart.taxRate * 100) | number:'1.0-0' }}%)</span><span>{{ cart.getTax() | number:'1.2-2' }} TND</span></div>
+      <div class="row total"><span>Total</span><span>{{ cart.getTotal() | number:'1.2-2' }} TND</span></div>
+    </div>
+
+    <div class="cart-actions">
+      <button class="btn btn-primary" (click)="checkout()">Passer à la caisse</button>
+      <button class="btn btn-secondary" (click)="cart.clear()">Vider le panier</button>
+    </div>
+  </div>
+
+  <ng-template #empty>
+    <div class="empty">Votre panier est vide.</div>
+  </ng-template>
+</div>

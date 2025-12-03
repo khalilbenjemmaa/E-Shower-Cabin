@@ -117,7 +117,12 @@
 
         <!-- Actions -->
         <div class="header-actions d-flex align-items-center justify-content-end">
-          <!-- Account, Wishlist, Cart actions here -->
+          <!-- Cart Button - Only show if cart has items -->
+          <button *ngIf="cartCount > 0" class="btn header-cart-btn me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
+            <i class="bi bi-cart3"></i>
+            <span class="badge cart-badge">{{ cartCount }}</span>
+          </button>
+
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </div>
       </div>
@@ -183,6 +188,17 @@
   </div>
 
 </header>
+
+<!-- Cart Offcanvas (global) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 id="cartOffcanvasLabel">Panier</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <app-cart></app-cart>
+  </div>
+</div>
 
 <!-- This router-outlet will display the content of the currently active page -->
 <router-outlet></router-outlet>

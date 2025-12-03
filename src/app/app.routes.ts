@@ -6,6 +6,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { RendezvousComponent } from './rendezvous/rendezvous.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'rendezvous', component: RendezvousComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'checkout', component: CheckoutComponent },
 
   { path: '**', redirectTo: '', pathMatch: 'full' } // Redirect any unknown URL to home
 ];

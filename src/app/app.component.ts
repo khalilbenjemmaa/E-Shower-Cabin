@@ -5,6 +5,8 @@ import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { RouterOutlet, RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ProductService, Product } from './services/product.service';
+import { CartService } from './services/cart.service';
+import { CartComponent } from './cart/cart.component';
 import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 
 // This declares the global function from your template's main.js file
@@ -15,7 +17,7 @@ declare var initMainScript: any;
   selector: 'app-root',
   standalone: true,
   // Add RouterLink and RouterLinkActive to the imports array
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FormsModule],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FormsModule, CartComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -24,13 +26,15 @@ export class AppComponent implements AfterViewInit {
   searchQuery: string = '';
   searchResults: Product[] = [];
   showDropdown: boolean = false;
+  cartCount: number = 0;
   private searchSubject = new Subject<string>();
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private productService: ProductService,
     private router: Router,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private cartService: CartService
   ) {
     // Debounce search input
     this.searchSubject.pipe(
@@ -38,6 +42,11 @@ export class AppComponent implements AfterViewInit {
       distinctUntilChanged()
     ).subscribe(searchTerm => {
       this.performSearch(searchTerm);
+    });
+
+    // Subscribe to cart changes
+    this.cartService.items$.subscribe(items => {
+      this.cartCount = items.reduce((s, i) => s + i.quantity, 0);
     });
   }
 
