@@ -305,11 +305,11 @@
   text-decoration: line-through;
 }
 
-/* Floating Elements */
+/* Floating Elements - Disabled to use main.css styles
 .floating-elements {
   position: absolute;
   right: 2rem;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -328,43 +328,53 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.3s ease;
   position: relative;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   animation: fadeInRight 0.6s ease-out backwards;
+  text-decoration: none;
+
+  i {
+    color: #11262B;
+    transition: color 0.3s ease;
+    font-size: 1.5rem;
+  }
 
   &:nth-child(1) { animation-delay: 0.5s; }
   &:nth-child(2) { animation-delay: 0.6s; }
   &:nth-child(3) { animation-delay: 0.7s; }
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 14px;
-    background: linear-gradient(45deg, #11262B, #043920, #11262B);
-    background-size: 200% 200%;
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 0.3s ease;
-  }
 }
 
 .floating-icon:hover {
-  background: #11262B !important;
-  transform: scale(1.25) rotate(360deg);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
-  border-width: 3px;
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
 
-  &::before {
-    opacity: 1;
-    animation: gradientShift 2s linear infinite;
+  &.facebook {
+    background: #1877F2 !important;
+    border-color: #1877F2 !important;
   }
+
+  &.instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d) !important;
+    border: none !important;
+  }
+
+  &.whatsapp {
+    background: #25D366 !important;
+    border-color: #25D366 !important;
+  }
+
+  i {
+    color: #fff !important;
+  }
+}
+  filter: brightness(1.1);
+  border-radius: 12px;
 }
 
 .floating-icon:hover i {
-  color: #fff !important;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .floating-icon i {
@@ -388,6 +398,7 @@
   justify-content: center;
   font-weight: 700;
 }
+*/
 
 /* Promo Cards Section */
 .promo-cards {
