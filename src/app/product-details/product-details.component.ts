@@ -19,7 +19,7 @@ export class ProductDetailsComponent implements OnInit {
       const deployedBase = 'https://khalilbenjemmaa.github.io/E-Shower-Cabin/';
       const productUrl = this.productId ? deployedBase + 'product/' + this.productId : deployedBase;
       const text = encodeURIComponent(
-        `Bonjour, je suis intéressé par ce produit : ${this.product.name}\n${productUrl}\nImage : ${this.product.image}\nPouvez-vous m'indiquer le prix ?`
+        `Bonjour, je suis intéressé par ce produit : ${this.product.name}\n${productUrl} \nPouvez-vous m'indiquer le prix ?`
       );
       return `https://wa.me/${phone}?text=${text}`;
     }
