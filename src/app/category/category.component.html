@@ -23,17 +23,22 @@
           <div class="product-categories-widget widget-item">
             <h3 class="widget-title">Catégories</h3>
             <ul class="category-tree list-unstyled mb-0">
-              <li class="category-item">
-                <a href="#" class="category-link">Cabines Complètes</a>
+              <li class="category-item expandable" [class.expanded]="showCabineSubcategories" (click)="toggleCabineSubcategories($event)">
+                <a href="#" class="category-link">Cabine de Douche <i class="bi" [ngClass]="{'bi-chevron-down': !showCabineSubcategories, 'bi-chevron-up': showCabineSubcategories}"></i></a>
+                <ul class="subcategory-tree" *ngIf="showCabineSubcategories">
+                  <li><a routerLink="/category/coulissante-angle" class="category-link">Coulissante en angle</a></li>
+                  <li><a routerLink="/category/coulissante-niche" class="category-link">Coulissante en niche</a></li>
+                  <li><a routerLink="/category/battante-angle" class="category-link">Battante en angle</a></li>
+                  <li><a routerLink="/category/battante-niche" class="category-link">Battante en niche</a></li>
+                  <li><a routerLink="/category/accordeon-angle" class="category-link">Accordéon en angle</a></li>
+                  <li><a routerLink="/category/accordeon-niche" class="category-link">Accordéon en niche</a></li>
+                </ul>
               </li>
               <li class="category-item">
-                <a href="#" class="category-link">Parois de Douche</a>
+                <a routerLink="/category/paroi-fixe" class="category-link">Paroi fixe</a>
               </li>
               <li class="category-item">
-                <a href="#" class="category-link">Receveurs</a>
-              </li>
-              <li class="category-item">
-                <a href="#" class="category-link">Accessoires</a>
+                <a routerLink="/category/accessoires" class="category-link">Accessoires</a>
               </li>
             </ul>
           </div><!--/Product Categories Widget -->

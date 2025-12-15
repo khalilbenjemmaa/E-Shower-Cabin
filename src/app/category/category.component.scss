@@ -1,3 +1,75 @@
+// Sidebar expandable category menu styles
+.category-tree {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category-item.expandable > .category-link {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.category-link i {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.subcategory-tree {
+  list-style: none;
+  margin: 0.25rem 0 0.25rem 1.5rem;
+  padding: 0 0 0 1rem;
+  border-left: 2px solid #11262B;
+}
+
+.subcategory-item.expandable > .category-link {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+
+// Only highlight expanded parent if submenu is open and hovered
+
+// When parent is expanded, make its link black with white text
+.category-item.expanded > .category-link {
+  background: #11262B;
+  color: #fff !important;
+}
+
+// Ensure only hovered .category-link is green
+.category-link:hover,
+.category-link:focus {
+  background: #043920;
+  color: #fff !important;
+}
+
+// Add more spacing between items
+.category-tree > .category-item,
+.subcategory-tree > li {
+  margin-bottom: 0.5rem;
+}
+
+.category-link {
+  color: #11262B;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  display: block;
+}
+
+// Green hover effect with white text
+.category-link:hover,
+.category-link:focus {
+  background: #043920;
+  color: #fff;
+}
 // bain-et-cuisine/src/app/category/category.component.scss
 // Modern Black & White Piano Theme
 

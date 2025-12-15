@@ -13,6 +13,43 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
+    // Sidebar expand/collapse state
+    showCabineSubcategories = false;
+    showCoulissanteSub = false;
+    showBattanteSub = false;
+    showAccordeonSub = false;
+    // Toggle main 'Cabine de Douche' subcategories
+    toggleCabineSubcategories(event: Event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.showCabineSubcategories = !this.showCabineSubcategories;
+      if (!this.showCabineSubcategories) {
+        this.showCoulissanteSub = false;
+        this.showBattanteSub = false;
+        this.showAccordeonSub = false;
+      }
+    }
+
+    // Toggle 'Coulissante' sub-subcategories
+    toggleCoulissanteSub(event: Event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.showCoulissanteSub = !this.showCoulissanteSub;
+    }
+
+    // Toggle 'Battante' sub-subcategories
+    toggleBattanteSub(event: Event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.showBattanteSub = !this.showBattanteSub;
+    }
+
+    // Toggle 'Accordéon' sub-subcategories
+    toggleAccordeonSub(event: Event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.showAccordeonSub = !this.showAccordeonSub;
+    }
   products: Product[] = [];
 
   constructor(
