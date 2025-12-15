@@ -1,3 +1,10 @@
+.features-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 // About Page - Modern Black & White Piano Theme
 
 /* Hero Section */
@@ -106,13 +113,6 @@
   background: #fff;
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
 .feature {
   background: #fff;
@@ -144,6 +144,9 @@
   margin-bottom: 1.5rem;
   font-weight: 300;
   transition: color 0.4s ease;
+  display: inline-block;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .feature h4 {

@@ -17,9 +17,15 @@ export class ProductDetailsComponent implements OnInit {
       if (!this.product) return 'https://wa.me/21699809804';
       const phone = '21699809804';
       const deployedBase = 'https://khalilbenjemmaa.github.io/E-Shower-Cabin/';
-      const productUrl = this.productId ? deployedBase + 'product/' + this.productId : deployedBase;
+      // Convert local asset path to deployed image URL
+      let imageUrl = '';
+      if (this.product.image && this.product.image.startsWith('assets/')) {
+        imageUrl = deployedBase + this.product.image;
+      } else {
+        imageUrl = this.product.image || '';
+      }
       const text = encodeURIComponent(
-        `Bonjour, je suis intéressé par ce produit : ${this.product.name}\n${productUrl} \nPouvez-vous m'indiquer le prix ?`
+        `${imageUrl}\nBonjour, je suis intéressé par ce produit : ${this.product.name}\nPouvez-vous m'indiquer le prix ?`
       );
       return `https://wa.me/${phone}?text=${text}`;
     }
