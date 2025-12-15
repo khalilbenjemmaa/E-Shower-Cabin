@@ -529,7 +529,7 @@ h6 {
 }
 
 .header .search-form .input-group .btn {
-  background-color: var(--accent-color);
+  background-color: #11262B;
   color: var(--contrast-color);
   padding: 0 25px;
   border: none;
