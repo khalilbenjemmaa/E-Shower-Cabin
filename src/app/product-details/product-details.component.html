@@ -48,7 +48,7 @@
 
             <div class="pricing-section">
               <div class="price-display">
-                <span class="sale-price">{{ product.price }} TND</span>
+                <span class="sale-price">Prix sur demande WhatsApp</span>
               </div>
             </div>
             <div class="product-description">
@@ -56,10 +56,11 @@
             </div>
             <div class="purchase-section">
                 <div class="action-buttons">
-                    <button class="btn primary-action" type="button" (click)="addToCart()">
-                      <i class="bi bi-cart-plus"></i>
-                      Ajouter au Panier
-                    </button>
+                    <a class="btn primary-action" target="_blank"
+                       [href]="getWhatsAppLink()">
+                      <i class="bi bi-whatsapp"></i>
+                      Demander le prix sur WhatsApp
+                    </a>
                 </div>
             </div>
 

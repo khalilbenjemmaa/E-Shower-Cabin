@@ -13,6 +13,16 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
+    getWhatsAppLink(): string {
+      if (!this.product) return 'https://wa.me/21699809804';
+      const phone = '21699809804';
+      const deployedBase = 'https://khalilbenjemmaa.github.io/E-Shower-Cabin/';
+      const productUrl = this.productId ? deployedBase + 'product/' + this.productId : deployedBase;
+      const text = encodeURIComponent(
+        `Bonjour, je suis intéressé par ce produit : ${this.product.name}\n${productUrl}\nImage : ${this.product.image}\nPouvez-vous m'indiquer le prix ?`
+      );
+      return `https://wa.me/${phone}?text=${text}`;
+    }
   productId: string | null = null;
   product: Product | undefined;
 

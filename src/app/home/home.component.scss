@@ -305,7 +305,7 @@
   text-decoration: line-through;
 }
 
-/* Floating Elements - Disabled to use main.css styles
+/* Floating Elements */
 .floating-elements {
   position: absolute;
   right: 2rem;
@@ -321,8 +321,6 @@
 .floating-icon {
   width: 56px;
   height: 56px;
-  background: #fff !important;
-  border: 2px solid #11262B !important;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -334,10 +332,23 @@
   animation: fadeInRight 0.6s ease-out backwards;
   text-decoration: none;
 
-  i {
-    color: #11262B;
-    transition: color 0.3s ease;
-    font-size: 1.5rem;
+  /* Brand Colors */
+  &.facebook {
+    background: #1877F2;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+  }
+
+  &.instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
+  }
+
+  &.whatsapp {
+    background: #25D366;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
   }
 
   &:nth-child(1) { animation-delay: 0.5s; }
@@ -347,28 +358,6 @@
 
 .floating-icon:hover {
   transform: scale(1.1);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-
-  &.facebook {
-    background: #1877F2 !important;
-    border-color: #1877F2 !important;
-  }
-
-  &.instagram {
-    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d) !important;
-    border: none !important;
-  }
-
-  &.whatsapp {
-    background: #25D366 !important;
-    border-color: #25D366 !important;
-  }
-
-  i {
-    color: #fff !important;
-  }
-}
   filter: brightness(1.1);
   border-radius: 12px;
 }
@@ -398,7 +387,6 @@
   justify-content: center;
   font-weight: 700;
 }
-*/
 
 /* Promo Cards Section */
 .promo-cards {

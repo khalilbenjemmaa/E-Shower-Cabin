@@ -59,6 +59,15 @@ export class AppComponent implements AfterViewInit {
       } else {
         console.error('initMainScript function not found. Check assets/js/main.js');
       }
+      // Remove preloader on Angular navigation events (SPA)
+      const preloader = document.querySelector('#preloader');
+      if (preloader && this.router) {
+        this.router.events.subscribe(() => {
+          if (document.body.contains(preloader)) {
+            preloader.remove();
+          }
+        });
+      }
     }
   }
 

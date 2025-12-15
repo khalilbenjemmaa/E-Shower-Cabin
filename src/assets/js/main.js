@@ -87,9 +87,16 @@ function initMainScript() {
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
+    // Remove on window load (classic)
     window.addEventListener('load', () => {
       preloader.remove();
     });
+    // Fallback: Remove after 2 seconds in case load event doesn't fire (Safari SPA)
+    setTimeout(() => {
+      if (document.body.contains(preloader)) {
+        preloader.remove();
+      }
+    }, 2000);
   }
 
   /**
