@@ -16,7 +16,7 @@ export class ProductDetailsComponent implements OnInit {
     getWhatsAppLink(): string {
       if (!this.product) return 'https://wa.me/21699809804';
       const phone = '21699809804';
-      const deployedBase = 'https://khalilbenjemmaa.github.io/E-Shower-Cabin/';
+      const deployedBase = 'https://sweetlodge.com.tn/#/';
       // Convert local asset path to deployed image URL
       let imageUrl = '';
       if (this.product.image && this.product.image.startsWith('assets/')) {

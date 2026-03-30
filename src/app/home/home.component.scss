@@ -299,6 +299,37 @@
   color: #11262B !important;
 }
 
+.home-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+  background: #11262B;
+  color: #fff;
+  border: 2px solid #11262B;
+  border-radius: 12px;
+  padding: 0.7rem 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.74rem;
+  line-height: 1.2;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.home-whatsapp-btn:hover {
+  background: #fff;
+  color: #11262B;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.home-whatsapp-btn i {
+  font-size: 1rem;
+}
+
 .original-price {
   font-size: 1rem;
   color: #999 !important;
