@@ -4,11 +4,12 @@
   <!-- Page Title -->
   <div class="page-title light-background">
     <div class="container d-lg-flex justify-content-between align-items-center">
-      <h1 class="mb-2 mb-lg-0">Cabines de Douche</h1>
+      <h1 class="mb-2 mb-lg-0">{{ categoryTitle }}</h1>
       <nav class="breadcrumbs">
         <ol>
           <li><a routerLink="/">Accueil</a></li>
           <li><a routerLink="/category">Catégorie</a></li>
+          <li *ngIf="currentCategory" class="active">{{ categoryTitle }}</li>
         </ol>
       </nav>
     </div>

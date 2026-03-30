@@ -18,7 +18,7 @@ export class ProductService {
     {
       id: 1,
       name: "Cabine d'Angle 'Clarté'",
-      category: "Cabines de Douche",
+      category: "Coulissante en angle",
       price: 1250,
       image: "assets/img/product/1.webp",
       description: "Cabine de douche d'angle élégante et moderne, parfaite pour optimiser l'espace dans votre salle de bain. Verre de sécurité de 8mm et profilés en aluminium chromé."
@@ -26,7 +26,7 @@ export class ProductService {
     {
       id: 2,
       name: "Cabine d'Angle 'Zen'",
-      category: "Cabines de Douche",
+      category: "Coulissante en angle",
       price: 1450,
       image: "assets/img/product/2.webp",
       description: "Design zen et minimaliste pour une salle de bain apaisante. Structure robuste et verre trempé de qualité supérieure."
@@ -34,7 +34,7 @@ export class ProductService {
     {
       id: 3,
       name: "Cabine 'Aqua'",
-      category: "Cabines de Douche",
+      category: "Coulissante en niche",
       price: 1100,
       image: "assets/img/product/3.webp",
       description: "Cabine de douche moderne avec finitions chromées. Idéale pour les petits espaces sans compromettre le style."
@@ -42,7 +42,7 @@ export class ProductService {
     {
       id: 4,
       name: "Cabine 'Élégance'",
-      category: "Cabines de Douche",
+      category: "Coulissante en niche",
       price: 999,
       image: "assets/img/product/4.webp",
       description: "Cabine élégante avec portes coulissantes et verre transparent. Parfaite alliance entre fonctionnalité et esthétique."
@@ -50,7 +50,7 @@ export class ProductService {
     {
       id: 5,
       name: "Cabine 'Prestige'",
-      category: "Cabines de Douche",
+      category: "Battante en angle",
       price: 1850,
       image: "assets/img/product/5.webp",
       description: "Cabine haut de gamme avec équipements premium. Design contemporain et finitions luxueuses."
@@ -58,7 +58,7 @@ export class ProductService {
     {
       id: 6,
       name: "Cabine 'Moderne'",
-      category: "Cabines de Douche",
+      category: "Battante en angle",
       price: 1350,
       image: "assets/img/product/6.webp",
       description: "Cabine moderne avec profilés noirs mat. Tendance et élégante pour une salle de bain design."
@@ -66,7 +66,7 @@ export class ProductService {
     {
       id: 7,
       name: "Cabine 'Luxe'",
-      category: "Cabines de Douche",
+      category: "Battante en niche",
       price: 2100,
       image: "assets/img/product/7.webp",
       description: "Cabine de luxe avec système de massage hydro. Transformez votre douche en expérience spa."
@@ -74,7 +74,7 @@ export class ProductService {
     {
       id: 8,
       name: "Cabine 'Compact'",
-      category: "Cabines de Douche",
+      category: "Battante en niche",
       price: 950,
       image: "assets/img/product/8.webp",
       description: "Solution compacte idéale pour les petites salles de bain. Optimisation maximale de l'espace."
@@ -82,7 +82,7 @@ export class ProductService {
     {
       id: 9,
       name: "Cabine 'Style'",
-      category: "Cabines de Douche",
+      category: "Accordéon en angle",
       price: 1200,
       image: "assets/img/product/9.webp",
       description: "Cabine au style contemporain avec verre extra-clair. Luminosité et élégance garanties."
@@ -90,7 +90,7 @@ export class ProductService {
     {
       id: 10,
       name: "Cabine 'Premium'",
-      category: "Cabines de Douche",
+      category: "Accordéon en angle",
       price: 1650,
       image: "assets/img/product/10.webp",
       description: "Cabine premium avec traitement anti-calcaire. Facilité d'entretien et durabilité exceptionnelle."
@@ -98,7 +98,7 @@ export class ProductService {
     {
       id: 11,
       name: "Cabine 'Crystal'",
-      category: "Cabines de Douche",
+      category: "Accordéon en niche",
       price: 1550,
       image: "assets/img/product/11.webp",
       description: "Verre cristallin ultra-transparent pour une clarté maximale. Design épuré et moderne."
@@ -106,47 +106,47 @@ export class ProductService {
     {
       id: 12,
       name: "Cabine 'Horizon'",
-      category: "Cabines de Douche",
+      category: "Accordéon en niche",
       price: 1400,
       image: "assets/img/product/12.webp",
       description: "Cabine spacieuse avec ouverture panoramique. Sensation d'espace et confort optimal."
     },
     {
       id: 13,
-      name: "Cabine 'Essence'",
-      category: "Cabines de Douche",
+      name: "Paroi 'Essence'",
+      category: "Paroi fixe",
       price: 1150,
       image: "assets/img/product/13.webp",
       description: "L'essentiel de la qualité à prix accessible. Robustesse et simplicité d'installation."
     },
     {
       id: 14,
-      name: "Cabine 'Oasis'",
-      category: "Cabines de Douche",
+      name: "Paroi 'Oasis'",
+      category: "Paroi fixe",
       price: 1750,
       image: "assets/img/product/14.webp",
-      description: "Créez votre oasis personnelle avec cette cabine aux finitions soignées. Détente garantie."
+      description: "Créez votre oasis personnelle avec cette paroi aux finitions soignées. Détente garantie."
     },
     {
       id: 15,
-      name: "Cabine 'Serenity'",
-      category: "Cabines de Douche",
+      name: "Paroi 'Serenity'",
+      category: "Paroi fixe",
       price: 1300,
       image: "assets/img/product/15.webp",
       description: "Design apaisant pour une douche relaxante. Verre dépoli pour plus d'intimité."
     },
     {
       id: 16,
-      name: "Cabine 'Harmony'",
-      category: "Cabines de Douche",
+      name: "Paroi 'Harmony'",
+      category: "Paroi fixe",
       price: 1500,
       image: "assets/img/product/16.webp",
-      description: "Harmonie parfaite entre design et fonctionnalité. Système de fermeture douce intégré."
+      description: "Harmonie parfaite entre design et fonctionnalité. Installation simple et rapide."
     },
     {
       id: 17,
       name: "Cabine 'Vision'",
-      category: "Cabines de Douche",
+      category: "Coulissante en angle",
       price: 1600,
       image: "assets/img/product/17.webp",
       description: "Vision claire et design futuriste. Profilés fins pour plus de luminosité."
@@ -154,7 +154,7 @@ export class ProductService {
     {
       id: 18,
       name: "Cabine 'Pure'",
-      category: "Cabines de Douche",
+      category: "Coulissante en niche",
       price: 1050,
       image: "assets/img/product/18.webp",
       description: "Pureté des lignes et simplicité d'entretien. Verre traité anti-taches."
@@ -162,7 +162,7 @@ export class ProductService {
     {
       id: 19,
       name: "Cabine 'Elite'",
-      category: "Cabines de Douche",
+      category: "Battante en angle",
       price: 1950,
       image: "assets/img/product/19.webp",
       description: "Cabine d'élite avec options personnalisables. Le summum du confort et du luxe."
@@ -170,7 +170,7 @@ export class ProductService {
     {
       id: 20,
       name: "Cabine 'Nova'",
-      category: "Cabines de Douche",
+      category: "Battante en niche",
       price: 1250,
       image: "assets/img/product/20.webp",
       description: "Nouveau design innovant avec système de ventilation intégré. Fraîcheur assurée."
@@ -178,7 +178,7 @@ export class ProductService {
     {
       id: 21,
       name: "Cabine 'Infinity'",
-      category: "Cabines de Douche",
+      category: "Accordéon en angle",
       price: 2200,
       image: "assets/img/product/21.webp",
       description: "Design infini sans limites. Verre sur mesure et options haut de gamme disponibles."
@@ -186,42 +186,42 @@ export class ProductService {
     {
       id: 22,
       name: "Cabine 'Aurora'",
-      category: "Cabines de Douche",
+      category: "Accordéon en niche",
       price: 1400,
       image: "assets/img/product/22.webp",
       description: "Illuminez votre salle de bain avec cette cabine au design lumineux. Verre transparent et finitions chromées."
     },
     {
       id: 23,
-      name: "Cabine 'Nexus'",
-      category: "Cabines de Douche",
-      price: 1700,
+      name: "Barre de Maintien Chrome",
+      category: "Accessoires",
+      price: 75,
       image: "assets/img/product/23.webp",
-      description: "Point de connexion entre tradition et modernité. Design contemporain avec touches classiques."
+      description: "Barre de maintien en acier chromé pour plus de sécurité. Installation facile."
     },
     {
       id: 24,
-      name: "Cabine 'Eclipse'",
-      category: "Cabines de Douche",
-      price: 1900,
+      name: "Receveur de Douche Extra-Plat",
+      category: "Accessoires",
+      price: 350,
       image: "assets/img/product/24.webp",
-      description: "Design sombre et élégant avec profilés noirs. Pour une salle de bain sophistiquée."
+      description: "Receveur extra-plat en résine de qualité supérieure. Design moderne et antidérapant."
     },
     {
       id: 25,
-      name: "Cabine 'Zenith'",
-      category: "Cabines de Douche",
-      price: 2300,
+      name: "Colonne de Douche Thermostatique",
+      category: "Accessoires",
+      price: 450,
       image: "assets/img/product/25.webp",
-      description: "Au sommet de la qualité et du design. Cabine premium avec toutes les options de luxe."
+      description: "Colonne de douche avec mitigeur thermostatique. Douchette à main et pommeau de tête inclus."
     },
     {
       id: 26,
-      name: "Cabine 'Radiance'",
-      category: "Cabines de Douche",
-      price: 1550,
+      name: "Kit de Joints d'Étanchéité",
+      category: "Accessoires",
+      price: 35,
       image: "assets/img/product/26.webp",
-      description: "Rayonnez de style avec cette cabine éclatante. Verre extra-clair et éclairage LED intégré."
+      description: "Kit complet de joints pour assurer l'étanchéité de votre cabine. Compatible avec tous nos modèles."
     }
   ];
 
