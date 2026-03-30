@@ -2363,8 +2363,8 @@ section,
 }
 
 .hero .hero-visuals .floating-elements .floating-icon.facebook {
-  top: 30%; /* Lowered from 20% to avoid navbar overlap */
-  left: -20px; /* Closer to card */
+  top: 50%;
+  left: -20px;
   animation-delay: 0s;
 }
 
@@ -2395,9 +2395,9 @@ section,
 }
 
 .hero .hero-visuals .floating-elements .floating-icon.whatsapp {
-  bottom: 20%;
+  bottom: -10%;
   left: -10px; /* Closer to card */
-  animation-delay: 2s;
+  animation-delay: 0s;
 }
 
 .hero .hero-visuals .floating-elements .floating-icon.whatsapp:hover {
