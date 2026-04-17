@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, ActivatedRoute } from '@angular/router';
 import { ProductService, Product } from '../services/product.service';
 import { CartService } from '../services/cart.service';
+import { PlanIconComponent } from '../shared/plan-icon/plan-icon.component';
 
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, PlanIconComponent],
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.scss']
 })
