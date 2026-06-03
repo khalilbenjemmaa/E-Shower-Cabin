@@ -31,14 +31,14 @@ export class ProductService {
       image: "assets/img/product/2.webp",
       description: "Design zen et minimaliste pour une salle de bain apaisante. Structure robuste et verre trempé de qualité supérieure."
     },
-    {
+    /* {
       id: 3,
       name: "Cabine 'Aqua'",
       category: "Coulissante en niche",
       price: 1100,
       image: "assets/img/product/3.webp",
       description: "Cabine de douche moderne avec finitions chromées. Idéale pour les petits espaces sans compromettre le style."
-    },
+    }, */
     {
       id: 4,
       name: "Cabine 'Élégance'",
@@ -71,14 +71,14 @@ export class ProductService {
       image: "assets/img/product/7.webp",
       description: "Cabine de luxe avec système de massage hydro. Transformez votre douche en expérience spa."
     },
-    {
+    /* {
       id: 8,
       name: "Cabine 'Compact'",
       category: "Battante en niche",
       price: 950,
       image: "assets/img/product/8.webp",
       description: "Solution compacte idéale pour les petites salles de bain. Optimisation maximale de l'espace."
-    },
+    }, */
     {
       id: 9,
       name: "Cabine 'Style'",
@@ -103,30 +103,30 @@ export class ProductService {
       image: "assets/img/product/11.webp",
       description: "Verre cristallin ultra-transparent pour une clarté maximale. Design épuré et moderne."
     },
-    {
+    /* {
       id: 12,
       name: "Cabine 'Horizon'",
       category: "Accordéon en niche",
       price: 1400,
       image: "assets/img/product/12.webp",
       description: "Cabine spacieuse avec ouverture panoramique. Sensation d'espace et confort optimal."
-    },
-    {
+    }, */
+    /* {
       id: 13,
       name: "Paroi 'Essence'",
       category: "Paroi fixe",
       price: 1150,
       image: "assets/img/product/13.webp",
       description: "L'essentiel de la qualité à prix accessible. Robustesse et simplicité d'installation."
-    },
-    {
+    }, */
+    /* {
       id: 14,
       name: "Paroi 'Oasis'",
       category: "Paroi fixe",
       price: 1750,
       image: "assets/img/product/14.webp",
       description: "Créez votre oasis personnelle avec cette paroi aux finitions soignées. Détente garantie."
-    },
+    }, */
     {
       id: 15,
       name: "Paroi 'Serenity'",
@@ -135,22 +135,22 @@ export class ProductService {
       image: "assets/img/product/15.webp",
       description: "Design apaisant pour une douche relaxante. Verre dépoli pour plus d'intimité."
     },
-    {
+    /* {
       id: 16,
       name: "Paroi 'Harmony'",
       category: "Paroi fixe",
       price: 1500,
       image: "assets/img/product/16.webp",
       description: "Harmonie parfaite entre design et fonctionnalité. Installation simple et rapide."
-    },
-    {
+    }, */
+    /* {
       id: 17,
       name: "Cabine 'Vision'",
       category: "Coulissante en angle",
       price: 1600,
       image: "assets/img/product/17.webp",
       description: "Vision claire et design futuriste. Profilés fins pour plus de luminosité."
-    },
+    }, */
     {
       id: 18,
       name: "Cabine 'Pure'",
@@ -167,14 +167,14 @@ export class ProductService {
       image: "assets/img/product/19.webp",
       description: "Cabine d'élite avec options personnalisables. Le summum du confort et du luxe."
     },
-    {
+    /* {
       id: 20,
       name: "Cabine 'Nova'",
       category: "Battante en niche",
       price: 1250,
       image: "assets/img/product/20.webp",
       description: "Nouveau design innovant avec système de ventilation intégré. Fraîcheur assurée."
-    },
+    }, */
     {
       id: 21,
       name: "Cabine 'Infinity'",
