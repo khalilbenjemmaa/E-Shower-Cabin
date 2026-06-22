@@ -1,10 +1,12 @@
 // bain-et-cuisine/src/app/category/category.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, ActivatedRoute } from '@angular/router';
-import { ProductService, Product } from '../services/product.service';
+import { RouterLink, ActivatedRoute, Router } from '@angular/router';
+import { ProductService, Product, TypeGroup } from '../services/product.service';
 import { CartService } from '../services/cart.service';
 import { PlanIconComponent } from '../shared/plan-icon/plan-icon.component';
+
+type ViewMode = 'types' | 'subtypes' | 'products';
 
 @Component({
   selector: 'app-category',
@@ -14,106 +16,117 @@ import { PlanIconComponent } from '../shared/plan-icon/plan-icon.component';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
-    // Sidebar expand/collapse state
-    showCabineSubcategories = false;
-    showCoulissanteSub = false;
-    showBattanteSub = false;
-    showAccordeonSub = false;
-    // Toggle main 'Cabine de Douche' subcategories
-    toggleCabineSubcategories(event: Event) {
-      event.preventDefault();
-      event.stopPropagation();
-      this.showCabineSubcategories = !this.showCabineSubcategories;
-      if (!this.showCabineSubcategories) {
-        this.showCoulissanteSub = false;
-        this.showBattanteSub = false;
-        this.showAccordeonSub = false;
-      }
-    }
+  // Sidebar expand/collapse
+  showCabineSubcategories = true;
 
-    // Toggle 'Coulissante' sub-subcategories
-    toggleCoulissanteSub(event: Event) {
-      event.preventDefault();
-      event.stopPropagation();
-      this.showCoulissanteSub = !this.showCoulissanteSub;
-    }
+  // Grouped data for the selection screens
+  typeGroups: TypeGroup[] = [];
 
-    // Toggle 'Battante' sub-subcategories
-    toggleBattanteSub(event: Event) {
-      event.preventDefault();
-      event.stopPropagation();
-      this.showBattanteSub = !this.showBattanteSub;
-    }
+  // Current selection (driven by route params)
+  currentTypeSlug = '';
+  currentSubTypeSlug = '';
 
-    // Toggle 'Accordéon' sub-subcategories
-    toggleAccordeonSub(event: Event) {
-      event.preventDefault();
-      event.stopPropagation();
-      this.showAccordeonSub = !this.showAccordeonSub;
-    }
+  // The group matching the current type selection
+  selectedGroup: TypeGroup | null = null;
+
+  // Products shown when in 'products' view
   products: Product[] = [];
-  allProducts: Product[] = [];
-  currentCategory: string = '';
-  categoryTitle: string = 'Cabines de Douche';
 
-  // Category mapping
-  private categoryMap: { [key: string]: string } = {
-    'coulissante-angle': 'Coulissante en angle',
-    'coulissante-niche': 'Coulissante en niche',
-    'battante-angle': 'Battante en angle',
-    'battante-niche': 'Battante en niche',
-    'accordeon-angle': 'Accordéon en angle',
-    'accordeon-niche': 'Accordéon en niche',
-    'paroi-fixe': 'Paroi fixe',
-    'accessoires': 'Accessoires'
-  };
+  // What to render
+  viewMode: ViewMode = 'types';
+
+  // Title shown in the header / breadcrumb
+  categoryTitle: string = 'Cabine de douche';
 
   constructor(
     private productService: ProductService,
     private cart: CartService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
-    this.productService.getAllProducts().subscribe(products => {
-      this.allProducts = products;
-      this.filterProductsByCategory();
+    this.productService.getTypeGroups().subscribe(groups => {
+      this.typeGroups = groups;
+      this.resolveView();
     });
 
-    // Listen to route parameter changes
     this.route.params.subscribe(params => {
-      this.currentCategory = params['categoryName'] || '';
-      this.updateCategoryTitle();
-      this.filterProductsByCategory();
+      this.currentTypeSlug = params['categoryName'] || '';
+      this.currentSubTypeSlug = params['subType'] || '';
+      this.resolveView();
     });
   }
 
-  updateCategoryTitle() {
-    if (this.currentCategory && this.categoryMap[this.currentCategory]) {
-      this.categoryTitle = this.categoryMap[this.currentCategory];
-    } else {
-      this.categoryTitle = 'Cabines de Douche';
-    }
-  }
-
-  filterProductsByCategory() {
-    if (!this.currentCategory) {
-      this.products = this.allProducts;
+  // Decide which of the three screens to show based on the route params.
+  private resolveView() {
+    if (this.typeGroups.length === 0) {
       return;
     }
 
-    const categoryName = this.categoryMap[this.currentCategory];
-    if (categoryName) {
-      this.products = this.allProducts.filter(p => p.category === categoryName);
-    } else {
-      this.products = this.allProducts;
+    // No type selected -> show the list of types
+    if (!this.currentTypeSlug) {
+      this.viewMode = 'types';
+      this.selectedGroup = null;
+      this.categoryTitle = 'Cabine de douche';
+      this.products = [];
+      return;
     }
+
+    this.selectedGroup =
+      this.typeGroups.find(g => g.slug === this.currentTypeSlug) || null;
+
+    // Unknown type slug -> fall back to the types screen
+    if (!this.selectedGroup) {
+      this.viewMode = 'types';
+      this.categoryTitle = 'Cabine de douche';
+      this.products = [];
+      return;
+    }
+
+    // "all" is the sentinel for "Show all" -> products for the whole type, no subtype filter.
+    const isShowAll = this.currentSubTypeSlug === 'all';
+    const hasExplicitSubType = !!this.currentSubTypeSlug && !isShowAll;
+    const onlyOneSubType = this.selectedGroup.subTypes.length <= 1;
+
+    if (isShowAll || hasExplicitSubType || onlyOneSubType) {
+      this.viewMode = 'products';
+      const subTypeSlug = hasExplicitSubType ? this.currentSubTypeSlug : undefined;
+
+      this.productService
+        .getProductsByTypeSlug(this.currentTypeSlug, subTypeSlug)
+        .subscribe(products => (this.products = products));
+
+      const subLabel = hasExplicitSubType
+        ? this.selectedGroup.subTypes.find(s => s.slug === this.currentSubTypeSlug)?.subType
+        : (onlyOneSubType && !isShowAll ? this.selectedGroup.subTypes[0]?.subType : undefined);
+
+      this.categoryTitle = subLabel
+        ? `${this.selectedGroup.type} — ${subLabel}`
+        : this.selectedGroup.type;
+      return;
+    }
+
+    // Type selected but no subtype, and multiple subtypes exist -> show subtype chooser.
+    this.viewMode = 'subtypes';
+    this.categoryTitle = this.selectedGroup.type;
+    this.products = [];
+  }
+
+  // "Show all <type>" -> products for the whole type, no subtype filter.
+  showAllForType(typeSlug: string) {
+    this.router.navigate(['/category', typeSlug, 'all']);
   }
 
   addToCart(product: Product, event: Event) {
     event.stopPropagation();
     this.cart.add(product, 1);
-    // Optional: show toast notification
     console.log('Added to cart:', product.name);
+  }
+
+  toggleCabineSubcategories(event: Event) {
+    event.preventDefault();
+    event.stopPropagation();
+    this.showCabineSubcategories = !this.showCabineSubcategories;
   }
 }

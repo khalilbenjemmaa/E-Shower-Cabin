@@ -1,89 +1,72 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-type IconType = 'niche' | 'angle' | 'contre-mur';
+export type PlanType =
+  | 'niche'
+  | 'angle-right'
+  | 'angle-left'
+  | 'walkin-left'
+  | 'walkin-right';
 
 @Component({
   selector: 'app-plan-icon',
   standalone: true,
   imports: [CommonModule],
   template: `
-    <ng-container *ngIf="iconType">
+    <ng-container *ngIf="planType as p">
       <div class="plan-icon-wrapper">
         <div class="plan-icon-card">
-
-          <!-- ─── EN NICHE : 3 murs (U) + 1 vitre (front) ─── -->
-          <svg *ngIf="iconType === 'niche'"
-            width="80" height="90" viewBox="0 0 100 115"
+          <svg width="80" height="90" viewBox="0 0 100 115"
             fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="100" height="115" rx="8" fill="#F0F9FF"/>
+
             <!-- shower floor tint -->
-            <rect x="24" y="24" width="52" height="56" fill="#DBEAFE" opacity="0.5"/>
-            <!-- 3 MURS : left wall -->
-            <rect x="12" y="12" width="12" height="80" fill="#374151"/>
-            <!-- bottom wall -->
-            <rect x="12" y="80" width="76" height="12" fill="#374151"/>
-            <!-- right wall -->
-            <rect x="76" y="12" width="12" height="80" fill="#374151"/>
-            <!-- 1 VITRE : top opening (full width) -->
-            <rect x="24" y="10" width="52" height="5" fill="#3B82F6" rx="1"/>
+            <rect x="18" y="18" width="64" height="64" fill="#DBEAFE" opacity="0.5"/>
+
+            <!-- ─── NICHE : 3 walls (L/T/R) + glass front (bottom) ─── -->
+            <ng-container *ngIf="p === 'niche'">
+              <rect x="14" y="14" width="72" height="10" fill="#374151"/>  <!-- back -->
+              <rect x="14" y="14" width="10" height="74" fill="#374151"/>  <!-- left -->
+              <rect x="76" y="14" width="10" height="74" fill="#374151"/>  <!-- right -->
+              <rect x="24" y="83" width="52" height="5" fill="#3B82F6" rx="1"/>  <!-- glass front -->
+            </ng-container>
+
+            <!-- ─── ANGLE RIGHT : back + left walls, glass front + right ─── -->
+            <ng-container *ngIf="p === 'angle-right'">
+              <rect x="14" y="14" width="72" height="10" fill="#374151"/>  <!-- back -->
+              <rect x="14" y="14" width="10" height="74" fill="#374151"/>  <!-- left -->
+              <rect x="81" y="24" width="5" height="64" fill="#3B82F6" rx="1"/>   <!-- right glass -->
+              <rect x="14" y="83" width="72" height="5" fill="#3B82F6" rx="1"/>   <!-- front glass -->
+            </ng-container>
+
+            <!-- ─── ANGLE LEFT : back + right walls, glass front + left ─── -->
+            <ng-container *ngIf="p === 'angle-left'">
+              <rect x="14" y="14" width="72" height="10" fill="#374151"/>  <!-- back -->
+              <rect x="76" y="14" width="10" height="74" fill="#374151"/>  <!-- right -->
+              <rect x="14" y="24" width="5" height="64" fill="#3B82F6" rx="1"/>   <!-- left glass -->
+              <rect x="14" y="83" width="72" height="5" fill="#3B82F6" rx="1"/>   <!-- front glass -->
+            </ng-container>
+
+            <!-- ─── WALK-IN LEFT : back wall + 1 fixed glass panel on left ─── -->
+            <ng-container *ngIf="p === 'walkin-left'">
+              <rect x="14" y="14" width="72" height="10" fill="#374151"/>  <!-- back -->
+              <rect x="14" y="14" width="10" height="40" fill="#374151"/>  <!-- short left wall -->
+              <rect x="24" y="24" width="5" height="58" fill="#3B82F6" rx="1"/>   <!-- fixed glass panel -->
+            </ng-container>
+
+            <!-- ─── WALK-IN RIGHT : back wall + 1 fixed glass panel on right ─── -->
+            <ng-container *ngIf="p === 'walkin-right'">
+              <rect x="14" y="14" width="72" height="10" fill="#374151"/>  <!-- back -->
+              <rect x="76" y="14" width="10" height="40" fill="#374151"/>  <!-- short right wall -->
+              <rect x="71" y="24" width="5" height="58" fill="#3B82F6" rx="1"/>   <!-- fixed glass panel -->
+            </ng-container>
+
             <!-- legend -->
             <text x="50" y="103" font-family="Arial" font-size="9" font-weight="bold"
-              text-anchor="middle" fill="#374151">3 Murs</text>
+              text-anchor="middle" fill="#374151">{{ wallLegend }}</text>
             <text x="50" y="113" font-family="Arial" font-size="9"
-              text-anchor="middle" fill="#3B82F6">1 Vitre</text>
+              text-anchor="middle" fill="#3B82F6">{{ glassLegend }}</text>
           </svg>
-
-          <!-- ─── EN ANGLE : 3 murs (U) + 2 vitres côte à côte ─── -->
-          <svg *ngIf="iconType === 'angle'"
-            width="80" height="90" viewBox="0 0 100 115"
-            fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="100" height="115" rx="8" fill="#F0F9FF"/>
-            <!-- shower floor tint -->
-            <rect x="24" y="24" width="52" height="56" fill="#DBEAFE" opacity="0.5"/>
-            <!-- 3 MURS : left wall -->
-            <rect x="12" y="12" width="12" height="80" fill="#374151"/>
-            <!-- bottom wall -->
-            <rect x="12" y="80" width="76" height="12" fill="#374151"/>
-            <!-- right wall -->
-            <rect x="76" y="12" width="12" height="80" fill="#374151"/>
-            <!-- 2 VITRES : two panels side-by-side at top opening -->
-            <!-- vitre gauche -->
-            <rect x="24" y="10" width="25" height="5" fill="#3B82F6" rx="1"/>
-            <!-- vitre droite -->
-            <rect x="51" y="10" width="25" height="5" fill="#3B82F6" rx="1"/>
-            <!-- gap between the 2 panels -->
-            <line x1="50" y1="8" x2="50" y2="17" stroke="#F0F9FF" stroke-width="2"/>
-            <!-- legend -->
-            <text x="50" y="103" font-family="Arial" font-size="9" font-weight="bold"
-              text-anchor="middle" fill="#374151">3 Murs</text>
-            <text x="50" y="113" font-family="Arial" font-size="9"
-              text-anchor="middle" fill="#3B82F6">2 Vitres</text>
-          </svg>
-
-          <!-- ─── CONTRE UN MUR : 1 mur (top) + 3 vitres (U of glass) ─── -->
-          <svg *ngIf="iconType === 'contre-mur'"
-            width="80" height="90" viewBox="0 0 100 115"
-            fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="100" height="115" rx="8" fill="#F0F9FF"/>
-            <!-- shower floor tint -->
-            <rect x="22" y="24" width="56" height="60" fill="#DBEAFE" opacity="0.5"/>
-            <!-- 1 MUR : top wall -->
-            <rect x="10" y="12" width="80" height="12" fill="#374151"/>
-            <!-- 3 VITRES : U-shape of glass -->
-            <!-- left vitre -->
-            <rect x="18" y="24" width="5" height="60" fill="#3B82F6" rx="1"/>
-            <!-- bottom vitre -->
-            <rect x="18" y="79" width="64" height="5" fill="#3B82F6" rx="1"/>
-            <!-- right vitre -->
-            <rect x="77" y="24" width="5" height="60" fill="#3B82F6" rx="1"/>
-            <!-- legend -->
-            <text x="50" y="103" font-family="Arial" font-size="9" font-weight="bold"
-              text-anchor="middle" fill="#374151">1 Mur</text>
-            <text x="50" y="113" font-family="Arial" font-size="9"
-              text-anchor="middle" fill="#3B82F6">3 Vitres</text>
-          </svg>
-
         </div>
         <span class="plan-icon-label">Vue de dessus</span>
       </div>
@@ -118,13 +101,41 @@ type IconType = 'niche' | 'angle' | 'contre-mur';
   `]
 })
 export class PlanIconComponent {
+  // Preferred: pass the explicit plan from the product.
+  @Input() plan: PlanType | null | undefined;
+  // Fallback: derive a plan from a free-text category/subtype string.
   @Input() category: string = '';
 
-  get iconType(): IconType | null {
+  get planType(): PlanType | null {
+    if (this.plan) {
+      return this.plan;
+    }
     const cat = this.category.toLowerCase();
     if (cat.includes('niche')) return 'niche';
-    if (cat.includes('angle')) return 'angle';
-    if (cat === 'paroi fixe') return 'contre-mur';
-    return null; // Accessoires and unknown → render nothing
+    if (cat.includes('angle')) return 'angle-right';
+    if (cat === 'paroi fixe' || cat.includes('walk in')) return 'walkin-right';
+    return null;
+  }
+
+  get wallLegend(): string {
+    switch (this.planType) {
+      case 'niche': return '3 Murs';
+      case 'angle-right':
+      case 'angle-left': return '2 Murs';
+      case 'walkin-left':
+      case 'walkin-right': return '1 Mur';
+      default: return '';
+    }
+  }
+
+  get glassLegend(): string {
+    switch (this.planType) {
+      case 'niche': return '1 Vitre';
+      case 'angle-right':
+      case 'angle-left': return '2 Vitres';
+      case 'walkin-left':
+      case 'walkin-right': return '1 Vitre';
+      default: return '';
+    }
   }
 }

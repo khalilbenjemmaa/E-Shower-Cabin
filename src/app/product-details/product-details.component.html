@@ -28,14 +28,14 @@
             </div>
 
             <!-- Product Configuration Icon -->
-            <app-plan-icon [category]="product.category"></app-plan-icon>
+            <app-plan-icon [plan]="product.plan"></app-plan-icon>
           </div>
         </div>
 
         <div class="col-lg-6">
           <div class="product-details">
             <div class="product-badge-container">
-              <span class="badge-category">{{ product.category }}</span>
+              <span class="badge-category text-capitalize">{{ product.type }}</span>
             </div>
             <h2 class="product-name">{{ product.name }}</h2>
 

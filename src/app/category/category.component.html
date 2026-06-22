@@ -8,8 +8,13 @@
       <nav class="breadcrumbs">
         <ol>
           <li><a routerLink="/">Accueil</a></li>
-          <li><a routerLink="/category">Catégorie</a></li>
-          <li *ngIf="currentCategory" class="active">{{ categoryTitle }}</li>
+          <li><a routerLink="/category">Cabine de douche</a></li>
+          <li *ngIf="selectedGroup && viewMode !== 'types'">
+            <a [routerLink]="['/category', selectedGroup.slug]">{{ selectedGroup.type }}</a>
+          </li>
+          <li *ngIf="viewMode === 'products' && currentSubTypeSlug && currentSubTypeSlug !== 'all'" class="active">
+            {{ categoryTitle }}
+          </li>
         </ol>
       </nav>
     </div>
@@ -18,59 +23,113 @@
   <div class="container">
     <div class="row">
 
+      <!-- Sidebar -->
       <div class="col-lg-4 sidebar">
         <div class="widgets-container">
-          <!-- Product Categories Widget -->
           <div class="product-categories-widget widget-item">
             <h3 class="widget-title">Catégories</h3>
             <ul class="category-tree list-unstyled mb-0">
-              <li class="category-item expandable" [class.expanded]="showCabineSubcategories" (click)="toggleCabineSubcategories($event)">
-                <a href="#" class="category-link">Cabine de Douche <i class="bi" [ngClass]="{'bi-chevron-down': !showCabineSubcategories, 'bi-chevron-up': showCabineSubcategories}"></i></a>
+              <li class="category-item expandable" [class.expanded]="showCabineSubcategories">
+                <a href="#" class="category-link" (click)="toggleCabineSubcategories($event)">
+                  Cabine de Douche
+                  <i class="bi" [ngClass]="{'bi-chevron-down': !showCabineSubcategories, 'bi-chevron-up': showCabineSubcategories}"></i>
+                </a>
                 <ul class="subcategory-tree" *ngIf="showCabineSubcategories">
-                  <li><a routerLink="/category/coulissante-angle" class="category-link">Coulissante en angle</a></li>
-                  <li><a routerLink="/category/coulissante-niche" class="category-link">Coulissante en niche</a></li>
-                  <li><a routerLink="/category/battante-angle" class="category-link">Battante en angle</a></li>
-                  <li><a routerLink="/category/battante-niche" class="category-link">Battante en niche</a></li>
-                  <li><a routerLink="/category/accordeon-angle" class="category-link">Accordéon en angle</a></li>
-                  <li><a routerLink="/category/accordeon-niche" class="category-link">Accordéon en niche</a></li>
+                  <li *ngFor="let group of typeGroups">
+                    <a [routerLink]="['/category', group.slug]" class="category-link text-capitalize">
+                      {{ group.type }}
+                    </a>
+                  </li>
                 </ul>
               </li>
-              <li class="category-item">
-                <a routerLink="/category/paroi-fixe" class="category-link">Paroi fixe</a>
-              </li>
-              <li class="category-item">
-                <a routerLink="/category/accessoires" class="category-link">Accessoires</a>
-              </li>
             </ul>
-          </div><!--/Product Categories Widget -->
+          </div>
         </div>
       </div>
 
+      <!-- Main content -->
       <div class="col-lg-8">
-        <!-- Category Product List Section -->
-        <section id="category-product-list" class="category-product-list section">
+
+        <!-- VIEW 1: choose a type -->
+        <section *ngIf="viewMode === 'types'" class="selection-section section">
           <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <p class="selection-intro">Choisissez un type de cabine de douche :</p>
             <div class="row g-4">
-              <!-- Dynamic Products -->
+              <div class="col-6 col-xl-6" *ngFor="let group of typeGroups">
+                <a class="selection-card" [routerLink]="['/category', group.slug]">
+                  <div class="selection-image">
+                    <img [src]="group.image" class="img-fluid" [alt]="group.type">
+                  </div>
+                  <div class="selection-body">
+                    <h4 class="selection-title text-capitalize">{{ group.type }}</h4>
+                    <span class="selection-count">{{ group.count }} produits</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 2: choose a subtype (en angle / en niche / ...) -->
+        <section *ngIf="viewMode === 'subtypes' && selectedGroup" class="selection-section section">
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <p class="selection-intro">
+              <span class="text-capitalize">{{ selectedGroup.type }}</span> — choisissez une installation :
+            </p>
+            <div class="row g-4">
+              <div class="col-6 col-xl-6" *ngFor="let sub of selectedGroup.subTypes">
+                <a class="selection-card" [routerLink]="['/category', selectedGroup.slug, sub.slug]">
+                  <div class="selection-image">
+                    <img [src]="sub.image" class="img-fluid" [alt]="sub.subType">
+                  </div>
+                  <div class="selection-body">
+                    <app-plan-icon [category]="sub.subType"></app-plan-icon>
+                    <h4 class="selection-title text-capitalize">{{ sub.subType }}</h4>
+                    <span class="selection-count">{{ sub.count }} produits</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <button type="button" class="show-all-btn" (click)="showAllForType(selectedGroup.slug)">
+                Voir tout ({{ selectedGroup.count }})
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 3: product list -->
+        <section *ngIf="viewMode === 'products'" id="category-product-list" class="category-product-list section">
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div *ngIf="selectedGroup && selectedGroup.subTypes.length > 1" class="mb-3">
+              <a [routerLink]="['/category', selectedGroup.slug]" class="back-link">
+                <i class="bi bi-arrow-left"></i> Retour aux installations
+              </a>
+            </div>
+
+            <div class="row g-4">
               <div class="col-6 col-xl-4" *ngFor="let product of products">
                 <div class="product-card" [routerLink]="['/product', product.id]" style="cursor: pointer;">
                   <div class="product-image">
                     <img [src]="product.image" class="main-image img-fluid" [alt]="product.name">
                     <div class="product-overlay">
                       <div class="product-actions">
-                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View" (click)="$event.stopPropagation()">
+                        <button type="button" class="action-btn" title="Quick View" (click)="$event.stopPropagation()">
                           <i class="bi bi-eye"></i>
                         </button>
-                        <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart" (click)="addToCart(product, $event)">
+                        <button type="button" class="action-btn" title="Add to Cart" (click)="addToCart(product, $event)">
                           <i class="bi bi-cart-plus"></i>
                         </button>
                       </div>
                     </div>
                   </div>
                   <div class="product-details">
-                    <div class="product-category">{{ product.category }}</div>
-                    <h4 class="product-title"><a [routerLink]="['/product', product.id]" (click)="$event.stopPropagation()">{{ product.name }}</a></h4>
-                    <app-plan-icon [category]="product.category"></app-plan-icon>
+                    <div class="product-category text-capitalize">{{ product.type }}</div>
+                    <h4 class="product-title">
+                      <a [routerLink]="['/product', product.id]" (click)="$event.stopPropagation()">{{ product.name }}</a>
+                    </h4>
+                    <app-plan-icon [plan]="product.plan"></app-plan-icon>
                     <div class="product-meta">
                       <div class="product-price">Prix sur demande WhatsApp</div>
                     </div>
@@ -78,8 +137,11 @@
                 </div>
               </div>
             </div>
+
+            <p *ngIf="products.length === 0" class="text-center py-5">Aucun produit dans cette catégorie.</p>
           </div>
-        </section><!-- /Category Product List Section -->
+        </section>
+
       </div>
 
     </div>
