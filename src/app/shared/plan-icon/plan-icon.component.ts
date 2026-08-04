@@ -5,8 +5,8 @@ export type PlanType =
   | 'niche'
   | 'angle-right'
   | 'angle-left'
-  | 'walkin-left'
-  | 'walkin-right';
+  | 'walk-in-left'
+  | 'walk-in-right';
 
 @Component({
   selector: 'app-plan-icon',
@@ -48,14 +48,14 @@ export type PlanType =
             </ng-container>
 
             <!-- ─── WALK-IN LEFT : back wall + 1 fixed glass panel on left ─── -->
-            <ng-container *ngIf="p === 'walkin-left'">
+            <ng-container *ngIf="p === 'walk-in-left'">
               <rect x="14" y="14" width="72" height="10" fill="#374151"/>  <!-- back -->
               <rect x="14" y="14" width="10" height="40" fill="#374151"/>  <!-- short left wall -->
               <rect x="24" y="24" width="5" height="58" fill="#3B82F6" rx="1"/>   <!-- fixed glass panel -->
             </ng-container>
 
             <!-- ─── WALK-IN RIGHT : back wall + 1 fixed glass panel on right ─── -->
-            <ng-container *ngIf="p === 'walkin-right'">
+            <ng-container *ngIf="p === 'walk-in-right'">
               <rect x="14" y="14" width="72" height="10" fill="#374151"/>  <!-- back -->
               <rect x="76" y="14" width="10" height="40" fill="#374151"/>  <!-- short right wall -->
               <rect x="71" y="24" width="5" height="58" fill="#3B82F6" rx="1"/>   <!-- fixed glass panel -->
@@ -113,7 +113,7 @@ export class PlanIconComponent {
     const cat = this.category.toLowerCase();
     if (cat.includes('niche')) return 'niche';
     if (cat.includes('angle')) return 'angle-right';
-    if (cat === 'paroi fixe' || cat.includes('walk in')) return 'walkin-right';
+    if (cat === 'paroi fixe' || cat.includes('walk in')) return 'walk-in-right';
     return null;
   }
 
@@ -122,8 +122,8 @@ export class PlanIconComponent {
       case 'niche': return '3 Murs';
       case 'angle-right':
       case 'angle-left': return '2 Murs';
-      case 'walkin-left':
-      case 'walkin-right': return '1 Mur';
+      case 'walk-in-left':
+      case 'walk-in-right': return '1 Mur';
       default: return '';
     }
   }
@@ -133,8 +133,8 @@ export class PlanIconComponent {
       case 'niche': return '1 Vitre';
       case 'angle-right':
       case 'angle-left': return '2 Vitres';
-      case 'walkin-left':
-      case 'walkin-right': return '1 Vitre';
+      case 'walk-in-left':
+      case 'walk-in-right': return '1 Vitre';
       default: return '';
     }
   }

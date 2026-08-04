@@ -10,7 +10,7 @@
             <h1 class="hero-title">Votre Espace de Rêve Commence Ici</h1>
             <p class="hero-description">Explorez nos collections exclusives pour la salle de bain. Design, qualité et innovation pour transformer votre intérieur.</p>
             <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
-              <a href="#products" class="btn-primary" style="background-color: #11262B !important ;">Voir Nos Produits</a>
+              <a href="#products" class="btn-primary" style="background-color: #11262B !important ;" (click)="scrollToProducts($event)">Voir Nos Produits</a>
               <a routerLink="/category"   style="background-color: #11262B !important ;" class="btn-secondary">Parcourir les Catégories</a>
             </div>
             <div class="features-list" data-aos="fade-up" data-aos-delay="300">
@@ -32,11 +32,11 @@
 
         <div class="hero-visuals">
           <div class="product-showcase" data-aos="fade-left" data-aos-delay="200">
-            <div class="product-card featured">
-              <img src="assets/img/product/25.webp" alt="Cabine de douche" class="img-fluid" loading="lazy">
+            <div class="product-card featured" *ngIf="featuredProduct" [routerLink]="['/product', featuredProduct.id]" style="cursor:pointer;">
+              <img [src]="featuredProduct.image" alt="Cabine de douche" class="img-fluid" loading="lazy">
               <div class="product-badge">Best Seller</div>
               <div class="product-info">
-                <h4>Cabine de Douche 'Prestige'</h4>
+                <h4 class="text-capitalize">{{ featuredProduct.type }} — {{ featuredProduct.name }}</h4>
                 <div class="price">
                   <span class="sale-price">Prix sur demande WhatsApp</span>
                 </div>
@@ -76,7 +76,7 @@
               <span class="category-tag">Tendance 2025</span>
               <h2>Nouvelle Collection Cabines de Douche</h2>
               <p>Découvrez nos dernières cabines et finitions pour une salle de bain moderne et élégante.</p>
-              <a href="#" class="btn-shop">Explorer la Collection <i class="bi bi-arrow-right"></i></a>
+              <a routerLink="/category" class="btn-shop">Explorer la Collection <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -86,11 +86,11 @@
             <div class="col-xl-6">
               <div class="category-card cat-men" data-aos="fade-up" data-aos-delay="300">
                 <div class="category-image">
-                  <img src="assets/img/product/10.webp" alt="Cabine de douche Walk-in" class="img-fluid">
+                  <img src="assets/img/product/10.webp" alt="Cabine de douche walk in" class="img-fluid">
                 </div>
                 <div class="category-content">
                   <h4>Cabines de Douche</h4>
-                  <p>45 produits</p>
+                  <p>Coulissante · Battante · Paroi fixe</p>
                   <a routerLink="/category" class="card-link">Découvrir <i class="bi bi-arrow-right"></i></a>
                 </div>
               </div>
@@ -111,83 +111,31 @@
     </div><!-- End Section Title -->
     <div class="container" data-aos="fade-up" data-aos-delay="100">
       <div class="row g-5 justify-content-center">
-        <!-- Product 1 -->
-        <div class="col-lg-4 col-md-6">
+        <!-- Dynamic Best Sellers -->
+        <div class="col-lg-4 col-md-6" *ngFor="let product of bestSellers; let i = index">
           <div class="product-item">
             <div class="product-image">
-              <div class="product-badge">Exclusivité</div>
-              <img src="assets/img/product/1.webp" alt="Cabine de douche" class="img-fluid" loading="lazy">
+              <div class="product-badge">{{ badges[i] || 'Populaire' }}</div>
+              <img [src]="product.image" alt="Cabine de douche" class="img-fluid" loading="lazy">
               <div class="product-actions">
                 <button class="action-btn wishlist-btn"><i class="bi bi-heart"></i></button>
                 <button class="action-btn quickview-btn"><i class="bi bi-zoom-in"></i></button>
               </div>
-              <button class="cart-btn" routerLink="/product/1">Voir les options</button>
+              <button class="cart-btn" [routerLink]="['/product', product.id]">Voir les options</button>
             </div>
             <div class="product-info">
-              <div class="product-category">Cabines de Douche</div>
-              <h4 class="product-name"><a routerLink="/product/1">Cabine d'Angle 'Clarté'</a></h4>
-              <app-plan-icon category="Coulissante en angle"></app-plan-icon>
+              <div class="product-category text-capitalize">{{ product.type }}</div>
+              <h4 class="product-name"><a [routerLink]="['/product', product.id]">{{ product.name }}</a></h4>
+              <app-plan-icon [plan]="product.plan"></app-plan-icon>
               <a class="btn primary-action home-whatsapp-btn" target="_blank" rel="noopener noreferrer"
-                 [href]="getWhatsAppLink('Cabine d\'Angle Clarté', 'assets/img/product/1.webp')">
+                 [href]="getWhatsAppLink(product.name, product.image)">
                 <i class="bi bi-whatsapp"></i>
                 Demander le prix sur WhatsApp
               </a>
             </div>
           </div>
         </div>
-        <!-- End Product 1 -->
-
-        <!-- Product 2 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="product-item">
-            <div class="product-image">
-              <div class="product-badge">Nouveau</div>
-              <img src="assets/img/product/5.webp" alt="Cabine de douche" class="img-fluid" loading="lazy">
-              <div class="product-actions">
-                <button class="action-btn wishlist-btn"><i class="bi bi-heart"></i></button>
-                <button class="action-btn quickview-btn"><i class="bi bi-zoom-in"></i></button>
-              </div>
-              <button class="cart-btn" routerLink="/product/5">Voir les options</button>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Cabines de Douche</div>
-              <h4 class="product-name"><a routerLink="/product/">Cabine d'Angle 'Zen'</a></h4>
-              <app-plan-icon category="Battante en angle"></app-plan-icon>
-              <a class="btn primary-action home-whatsapp-btn" target="_blank" rel="noopener noreferrer"
-                 [href]="getWhatsAppLink('Cabine d\'Angle Zen', 'assets/img/product/5.webp')">
-                <i class="bi bi-whatsapp"></i>
-                Demander le prix sur WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- End Product 2 -->
-
-        <!-- Product 3 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="product-item">
-            <div class="product-image">
-              <div class="product-badge">Promotion</div>
-              <img src="assets/img/product/3.webp" alt="Cabine de douche" class="img-fluid" loading="lazy">
-              <div class="product-actions">
-                <button class="action-btn wishlist-btn"><i class="bi bi-heart"></i></button>
-                <button class="action-btn quickview-btn"><i class="bi bi-zoom-in"></i></button>
-              </div>
-              <button class="cart-btn" routerLink="/product/3">Voir les options</button>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Cabines de Douche</div>
-              <h4 class="product-name"><a routerLink="/product/3">Cabine 'Aqua'</a></h4>
-              <app-plan-icon category="Coulissante en niche"></app-plan-icon>
-              <a class="btn primary-action home-whatsapp-btn" target="_blank" rel="noopener noreferrer"
-                 [href]="getWhatsAppLink('Cabine Aqua', 'assets/img/product/3.webp')">
-                <i class="bi bi-whatsapp"></i>
-                Demander le prix sur WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- End Product 3 -->
+        <!-- End Dynamic Best Sellers -->
 
       </div>
     </div>

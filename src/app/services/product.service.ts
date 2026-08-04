@@ -7,8 +7,8 @@ export type PlanType =
   | 'niche'          // 3 walls + 1 glass front
   | 'angle-right'    // back + left walls, glass on front + right return
   | 'angle-left'     // back + right walls, glass on front + left return
-  | 'walkin-left'    // 1 wall + 1 fixed glass panel on the left, open
-  | 'walkin-right';  // 1 wall + 1 fixed glass panel on the right, open
+  | 'walk-in-left'    // 1 wall + 1 fixed glass panel on the left, open
+  | 'walk-in-right';  // 1 wall + 1 fixed glass panel on the right, open
 
 export interface Product {
   id: number;
@@ -56,7 +56,7 @@ export class ProductService {
     },
     {
       id: 2,
-      name: "installation en ongle",
+      name: "installation en angle",
       category: "battente",
       mainCategory: "Cabine de douche",
       type: "battente",
@@ -78,7 +78,7 @@ export class ProductService {
     },
     {
       id: 6,
-      name: "installation en ongle",
+      name: "installation en angle",
       category: "coulissante",
       mainCategory: "Cabine de douche",
       type: "coulissante",
@@ -100,7 +100,7 @@ export class ProductService {
     },
     {
       id: 9,
-      name: "walk in ongle",
+      name: "walk in en angle",
       category: "paroi fixe",
       mainCategory: "Cabine de douche",
       type: "paroi fixe",
@@ -111,7 +111,7 @@ export class ProductService {
     },
     {
       id: 10,
-      name: "installation en ongle",
+      name: "installation en angle",
       category: "coulissante latérale",
       mainCategory: "Cabine de douche",
       type: "coulissante latérale",
@@ -221,7 +221,7 @@ export class ProductService {
     },
     {
       id: 23,
-      name: "installation en ongle",
+      name: "installation en angle",
       category: "coulissante latérale",
       mainCategory: "Cabine de douche",
       type: "coulissante latérale",
@@ -232,7 +232,7 @@ export class ProductService {
     },
     {
       id: 24,
-      name: "installation en ongle",
+      name: "installation en angle",
       category: "battente",
       mainCategory: "Cabine de douche",
       type: "battente",
@@ -258,20 +258,20 @@ export class ProductService {
   private planMap: { [id: number]: PlanType } = {
     1: 'niche',
     2: 'angle-right',
-    4: 'walkin-left',
+    4: 'walk-in-left',
     6: 'angle-right',
     7: 'angle-left',
-    9: 'walkin-left',
+    9: 'walk-in-left',
     10: 'angle-right',
     11: 'niche',
-    12: 'walkin-right',
+    12: 'walk-in-right',
     14: 'angle-right',
     15: 'niche',
     18: 'niche',
     19: 'niche',
     20: 'niche',
-    21: 'walkin-right',
-    22: 'walkin-right',
+    21: 'walk-in-right',
+    22: 'walk-in-right',
     23: 'angle-left',
     24: 'angle-right',
     25: 'niche'
