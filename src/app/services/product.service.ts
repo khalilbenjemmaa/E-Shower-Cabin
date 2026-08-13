@@ -56,11 +56,11 @@ export class ProductService {
     },
     {
       id: 2,
-      name: "installation en angle",
-      category: "battente",
+      name: "installation en ongle",
+      category: "Battante",
       mainCategory: "Cabine de douche",
-      type: "battente",
-      subType: "en angle",
+      type: "Battante",
+      subType: "en ongle",
       price: 1450,
       image: "assets/img/product/2.webp",
       description: "Design zen et minimaliste pour une salle de bain apaisante. Structure robuste et verre trempé de qualité supérieure."
@@ -78,11 +78,11 @@ export class ProductService {
     },
     {
       id: 6,
-      name: "installation en angle",
+      name: "installation en ongle",
       category: "coulissante",
       mainCategory: "Cabine de douche",
       type: "coulissante",
-      subType: "en angle",
+      subType: "en ongle",
       price: 1350,
       image: "assets/img/product/6.webp",
       description: "Cabine moderne avec profilés noirs mat. Tendance et élégante pour une salle de bain design."
@@ -100,7 +100,7 @@ export class ProductService {
     },
     {
       id: 9,
-      name: "walk in en angle",
+      name: "walk in en ongle",
       category: "paroi fixe",
       mainCategory: "Cabine de douche",
       type: "paroi fixe",
@@ -111,11 +111,11 @@ export class ProductService {
     },
     {
       id: 10,
-      name: "installation en angle",
+      name: "installation en ongle",
       category: "coulissante latérale",
       mainCategory: "Cabine de douche",
       type: "coulissante latérale",
-      subType: "en angle",
+      subType: "en ongle",
       price: 1650,
       image: "assets/img/product/10.webp",
       description: "Cabine premium avec traitement anti-calcaire. Facilité d'entretien et durabilité exceptionnelle."
@@ -144,18 +144,18 @@ export class ProductService {
     },
     {
       id: 14,
-      name: "installation en angle",
+      name: "installation en ongle",
       category: "coulissante",
       mainCategory: "Cabine de douche",
       type: "coulissante",
-      subType: "en angle",
+      subType: "en ongle",
       price: 1750,
       image: "assets/img/product/14.webp",
       description: "Créez votre oasis personnelle avec cette paroi aux finitions soignées. Détente garantie."
     },
     {
       id: 15,
-      name: "installation en niche (walk in)",
+      name: "walk in",
       category: "coulissante",
       mainCategory: "Cabine de douche",
       type: "coulissante",
@@ -221,22 +221,22 @@ export class ProductService {
     },
     {
       id: 23,
-      name: "installation en angle",
+      name: "installation en ongle",
       category: "coulissante latérale",
       mainCategory: "Cabine de douche",
       type: "coulissante latérale",
-      subType: "en angle",
+      subType: "en ongle",
       price: 75,
       image: "assets/img/product/23.webp",
       description: "Barre de maintien en acier chromé pour plus de sécurité. Installation facile."
     },
     {
       id: 24,
-      name: "installation en angle",
-      category: "battente",
+      name: "installation en ongle",
+      category: "Battante",
       mainCategory: "Cabine de douche",
-      type: "battente",
-      subType: "en angle",
+      type: "Battante",
+      subType: "en ongle",
       price: 350,
       image: "assets/img/product/24.webp",
       description: "Receveur extra-plat en résine de qualité supérieure. Design moderne et antidérapant."
@@ -251,6 +251,127 @@ export class ProductService {
       price: 450,
       image: "assets/img/product/25.webp",
       description: "Colonne de douche avec mitigeur thermostatique. Douchette à main et pommeau de tête inclus."
+    },
+    {
+      id: 26,
+      name: "installation en ongle",
+      category: "coulissante",
+      mainCategory: "Cabine de douche",
+      type: "coulissante",
+      subType: "en niche",
+      price: 1299,
+      image: "assets/img/product/27.webp",
+      description: "Cabine élégante au bon rapport qualité/prix, verre traité et profilés solides pour une utilisation quotidienne."
+    },
+    {
+      id: 27,
+      name: "parois sur baignoire (walk in)",
+      category: "paroi fixe",
+      mainCategory: "Cabine de douche",
+      type: "paroi fixe",
+      subType: "walk in",
+      price: 1399,
+      image: "assets/img/product/28.webp",
+      description: "Porte battante au design moderne, charnières robustes et finition soignée — facile à entretenir."
+    },
+    {
+      id: 28,
+      name: "Walk in",
+      category: "paroi fixe",
+      mainCategory: "Cabine de douche",
+      type: "paroi fixe",
+      subType: "walk in",
+      price: 1099,
+      image: "assets/img/product/29.webp",
+      description: "Paroi fixe minimaliste qui maximise l'ouverture, verre extra-clair et bords polis pour la sécurité."
+    },
+    {
+      id: 29,
+      name: "Walk in",
+      category: "paroi fixe",
+      mainCategory: "Cabine de douche",
+      type: "paroi fixe",
+      subType: "walk in",
+      price: 1490,
+      image: "assets/img/product/30.webp",
+      description: "Système coulissant latéral pour accès facile et gain d'espace, roulettes silencieuses et finition durable."
+    },
+    {
+      id: 30,
+      name: "installation en niche",
+      category: "coulissante latérale ",
+      mainCategory: "Cabine de douche",
+      type: "coulissante",
+      subType: "en niche",
+      price: 1250,
+      image: "assets/img/product/31.webp",
+      description: "Version compacte et fonctionnelle pour petites salles de bain, verre traité anti-calcaire."
+    },
+    {
+      id: 31,
+      name: "Installation en niche",
+      category: "Coulissante latérale",
+      mainCategory: "Cabine de douche",
+      type: "coulissante",
+      subType: "en niche",
+      price: 1320,
+      image: "assets/img/product/32.webp",
+      description: "Paroi premium avec renforts discrets, finition satinée possible et installation sur mesure."
+    },
+    {
+      id: 32,
+      name: "Installation en niche",
+      category: "Battante",
+      mainCategory: "Cabine de douche",
+      type: "Battante",
+      subType: "en niche",
+      price: 980,
+      image: "assets/img/product/33.webp",
+      description: "Porte battante économique, idéale pour rénovations rapides sans compromettre la qualité."
+    },
+    {
+      id: 33,
+      name: "installation en niche",
+      category: "coulissante",
+      mainCategory: "Cabine de douche",
+      type: "coulissante",
+      subType: "en niche",
+      price: 1590,
+      image: "assets/img/product/34.webp",
+      description: "Design contemporain avec profilés fins et verre clair — parfait pour salles de bain modernes."
+    },
+    {
+      id: 34,
+      name: "Installation en ongle",
+      category: "Battante",
+      mainCategory: "Cabine de douche",
+      type: "Battante",
+      subType: "en ongle",
+      price: 1150,
+      image: "assets/img/product/35.webp",
+      description: "Solution walk-in simple à installer, optique épurée et entretien réduit grâce aux traitements de surface."
+    },
+    {
+      id: 35,
+      name: "Installation en niche",
+      category: "coulissante",
+      mainCategory: "Cabine de douche",
+      type: "coulissante",
+      subType: "en niche",
+      price: 1425,
+      image: "assets/img/product/36.webp",
+      description: "Cabine coulissante premium avec rails renforcés et isolation phonique lors de l'ouverture."
+    },
+    {
+      id: 36,
+      name: "walk-in",
+      category: "Paroi fixe",
+      mainCategory: "Cabine de douche",
+      type: "walk-in",
+      subType: "Paroi fixe",
+      price: 1680,
+      image: "assets/img/product/37.webp",
+      description: "Modèle haut de gamme avec traitement anti-calcaire et possibilité de verre dépoli pour l'intimité."
     },
   ];
 
@@ -274,7 +395,18 @@ export class ProductService {
     22: 'walk-in-right',
     23: 'angle-left',
     24: 'angle-right',
-    25: 'niche'
+    25: 'niche',
+    26: 'niche',
+    27: 'angle-right',
+    28: 'walk-in-left',
+    29: 'angle-left',
+    30: 'niche',
+    31: 'walk-in-right',
+    32: 'angle-right',
+    33: 'niche',
+    34: 'walk-in-left',
+    35: 'angle-right',
+    36: 'walk-in-right'
   };
 
   constructor() {
@@ -308,7 +440,7 @@ export class ProductService {
   }
 
   // Display order of the top-level types under "Cabine de douche"
-  private typeOrder: string[] = ['coulissante', 'battente', 'coulissante latérale', 'paroi fixe'];
+  private typeOrder: string[] = ['coulissante', 'Battante', 'coulissante latérale', 'paroi fixe'];
 
   static slugify(value: string): string {
     return value.toLowerCase().trim().replace(/\s+/g, '-');
