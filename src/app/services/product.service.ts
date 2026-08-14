@@ -67,11 +67,11 @@ export class ProductService {
     },
     {
       id: 4,
-      name: "parois sur baignoire (walk in)",
+      name: "Parois sur baignoire (Walk in)",
       category: "paroi fixe",
       mainCategory: "Cabine de douche",
       type: "paroi fixe",
-      subType: "walk in",
+      subType: "Walk in",
       price: 999,
       image: "assets/img/product/4.webp",
       description: "Cabine élégante avec portes coulissantes et verre transparent. Parfaite alliance entre fonctionnalité et esthétique."
@@ -100,11 +100,11 @@ export class ProductService {
     },
     {
       id: 9,
-      name: "walk in en ongle",
+      name: "Walk in en ongle",
       category: "paroi fixe",
       mainCategory: "Cabine de douche",
       type: "paroi fixe",
-      subType: "walk in",
+      subType: "Walk in",
       price: 1200,
       image: "assets/img/product/9.webp",
       description: "Cabine au style contemporain avec verre extra-clair. Luminosité et élégance garanties."
@@ -133,11 +133,11 @@ export class ProductService {
     },
     {
       id: 12,
-      name: "walk in",
+      name: "Walk in",
       category: "paroi fixe",
       mainCategory: "Cabine de douche",
       type: "paroi fixe",
-      subType: "walk in",
+      subType: "Walk in",
       price: 1400,
       image: "assets/img/product/12.webp",
       description: "Cabine spacieuse avec ouverture panoramique. Sensation d'espace et confort optimal."
@@ -155,7 +155,7 @@ export class ProductService {
     },
     {
       id: 15,
-      name: "walk in",
+      name: "Walk in",
       category: "coulissante",
       mainCategory: "Cabine de douche",
       type: "coulissante",
@@ -166,11 +166,11 @@ export class ProductService {
     },
     {
       id: 18,
-      name: "walk in",
+      name: "Walk in",
       category: "paroi fixe",
       mainCategory: "Cabine de douche",
       type: "paroi fixe",
-      subType: "walk in",
+      subType: "Walk in",
       price: 1050,
       image: "assets/img/product/18.webp",
       description: "Pureté des lignes et simplicité d'entretien. Verre traité anti-taches."
@@ -199,22 +199,22 @@ export class ProductService {
     },
     {
       id: 21,
-      name: "walk in",
+      name: "Walk in",
       category: "paroi fixe",
       mainCategory: "Cabine de douche",
       type: "paroi fixe",
-      subType: "walk in",
+      subType: "Walk in",
       price: 2200,
       image: "assets/img/product/21.webp",
       description: "Design infini sans limites. Verre sur mesure et options haut de gamme disponibles."
     },
     {
       id: 22,
-      name: "walk in",
+      name: "Walk in",
       category: "paroi fixe",
       mainCategory: "Cabine de douche",
       type: "paroi fixe",
-      subType: "walk in",
+      subType: "Walk in",
       price: 1400,
       image: "assets/img/product/22.webp",
       description: "Illuminez votre salle de bain avec cette cabine au design lumineux. Verre transparent et finitions chromées."
@@ -265,11 +265,11 @@ export class ProductService {
     },
     {
       id: 27,
-      name: "parois sur baignoire (walk in)",
+      name: "Parois sur baignoire (Walk in)",
       category: "paroi fixe",
       mainCategory: "Cabine de douche",
       type: "paroi fixe",
-      subType: "walk in",
+      subType: "Walk in",
       price: 1399,
       image: "assets/img/product/28.webp",
       description: "Porte battante au design moderne, charnières robustes et finition soignée — facile à entretenir."
@@ -280,7 +280,7 @@ export class ProductService {
       category: "paroi fixe",
       mainCategory: "Cabine de douche",
       type: "paroi fixe",
-      subType: "walk in",
+      subType: "Walk in",
       price: 1099,
       image: "assets/img/product/29.webp",
       description: "Paroi fixe minimaliste qui maximise l'ouverture, verre extra-clair et bords polis pour la sécurité."
@@ -291,7 +291,7 @@ export class ProductService {
       category: "paroi fixe",
       mainCategory: "Cabine de douche",
       type: "paroi fixe",
-      subType: "walk in",
+      subType: "Walk in",
       price: 1490,
       image: "assets/img/product/30.webp",
       description: "Système coulissant latéral pour accès facile et gain d'espace, roulettes silencieuses et finition durable."
@@ -379,10 +379,10 @@ export class ProductService {
   private planMap: { [id: number]: PlanType } = {
     1: 'niche',
     2: 'angle-right',
-    4: 'walk-in-left',
+    4: 'walk-in-right',
     6: 'angle-right',
     7: 'angle-left',
-    9: 'walk-in-left',
+    9: 'walk-in-right',
     10: 'angle-right',
     11: 'niche',
     12: 'walk-in-right',
@@ -398,13 +398,13 @@ export class ProductService {
     25: 'niche',
     26: 'niche',
     27: 'angle-right',
-    28: 'walk-in-left',
+    28: 'walk-in-right',
     29: 'angle-left',
     30: 'niche',
     31: 'walk-in-right',
     32: 'angle-right',
     33: 'niche',
-    34: 'walk-in-left',
+    34: 'walk-in-right',
     35: 'angle-right',
     36: 'walk-in-right'
   };

@@ -47,25 +47,12 @@ export type PlanType =
               <rect x="14" y="83" width="72" height="5" fill="#3B82F6" rx="1"/>   <!-- front glass -->
             </ng-container>
 
-            <!-- ─── WALK-IN LEFT : back wall + 1 fixed glass panel on left ─── -->
-            <ng-container *ngIf="p === 'walk-in-left'">
-              <rect x="14" y="14" width="72" height="10" fill="#374151"/>  <!-- back -->
-              <rect x="14" y="14" width="10" height="40" fill="#374151"/>  <!-- short left wall -->
-              <rect x="24" y="24" width="5" height="58" fill="#3B82F6" rx="1"/>   <!-- fixed glass panel -->
+            <!-- ─── WALK-IN : all paroi fixe / walk-in products share the same icon ─── -->
+            <ng-container *ngIf="p === 'walk-in-left' || p === 'walk-in-right'">
+              <rect x="14" y="14" width="72" height="10" fill="#374151"/>  <!-- top wall -->
+              <rect x="14" y="14" width="10" height="74" fill="#374151"/>  <!-- left wall -->
+              <rect x="14" y="70" width="72" height="5" fill="#3B82F6" rx="1"/>   <!-- full-length glass panel -->
             </ng-container>
-
-            <!-- ─── WALK-IN RIGHT : back wall + 1 fixed glass panel on right ─── -->
-            <ng-container *ngIf="p === 'walk-in-right'">
-              <rect x="14" y="14" width="72" height="10" fill="#374151"/>  <!-- back -->
-              <rect x="76" y="14" width="10" height="40" fill="#374151"/>  <!-- short right wall -->
-              <rect x="71" y="24" width="5" height="58" fill="#3B82F6" rx="1"/>   <!-- fixed glass panel -->
-            </ng-container>
-
-            <!-- legend -->
-            <text x="50" y="103" font-family="Arial" font-size="9" font-weight="bold"
-              text-anchor="middle" fill="#374151">{{ wallLegend }}</text>
-            <text x="50" y="113" font-family="Arial" font-size="9"
-              text-anchor="middle" fill="#3B82F6">{{ glassLegend }}</text>
           </svg>
         </div>
         <span class="plan-icon-label">Vue de dessus</span>
@@ -113,29 +100,8 @@ export class PlanIconComponent {
     const cat = this.category.toLowerCase();
     if (cat.includes('niche')) return 'niche';
     if (cat.includes('angle')) return 'angle-right';
-    if (cat === 'paroi fixe' || cat.includes('walk in')) return 'walk-in-right';
+    if (cat === 'paroi fixe' || cat.includes('Walk in')) return 'walk-in-right';
     return null;
   }
 
-  get wallLegend(): string {
-    switch (this.planType) {
-      case 'niche': return '3 Murs';
-      case 'angle-right':
-      case 'angle-left': return '2 Murs';
-      case 'walk-in-left':
-      case 'walk-in-right': return '1 Mur';
-      default: return '';
-    }
-  }
-
-  get glassLegend(): string {
-    switch (this.planType) {
-      case 'niche': return '1 Vitre';
-      case 'angle-right':
-      case 'angle-left': return '2 Vitres';
-      case 'walk-in-left':
-      case 'walk-in-right': return '1 Vitre';
-      default: return '';
-    }
-  }
 }
