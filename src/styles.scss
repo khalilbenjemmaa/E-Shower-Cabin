@@ -170,3 +170,106 @@ a:hover {
   background: #000;
   color: #fff;
 }
+
+/* Scroll reveal, applied by RevealDirective (shared/reveal.directive.ts) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s cubic-bezier(.22, .61, .36, 1) var(--reveal-delay, 0ms),
+    transform 0.8s cubic-bezier(.22, .61, .36, 1) var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Shared UI primitives (sl- = Sweet Lodge). Colors come from the theme tokens in assets/css/main.css. */
+$sl-ease: cubic-bezier(.22, .61, .36, 1);
+
+.sl-eyebrow {
+  font-family: var(--nav-font);
+  font-size: .8125rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin: 0 0 .75rem;
+}
+
+.sl-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-height: 44px;
+  font-weight: 600;
+  color: var(--accent-color);
+  border-bottom: 1px solid currentColor;
+
+  i { transition: transform .3s $sl-ease; }
+  &:hover { color: var(--default-color); i { transform: translateX(4px); } }
+}
+
+.sl-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 2rem;
+
+  // Phones: equal, full-width stacked buttons. Larger screens: side by side, same minimum width.
+  > .sl-btn { flex: 1 1 100%; }
+
+  @media (min-width: 576px) {
+    > .sl-btn { flex: 0 0 auto; min-width: 200px; }
+  }
+}
+
+// 16px side gutters on phones (Bootstrap default is 12px).
+@media (max-width: 575.98px) {
+  .main .container { padding-left: 16px; padding-right: 16px; }
+}
+
+.sl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  min-height: 52px;
+  padding: .875rem 1.6rem;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-md);
+  font-family: var(--nav-font);
+  font-weight: 600;
+  letter-spacing: .02em;
+  transition: background-color .3s $sl-ease, color .3s $sl-ease, border-color .3s $sl-ease, transform .3s $sl-ease;
+
+  &:hover { transform: translateY(-2px); }
+
+  &--primary { background: var(--accent-color); color: var(--contrast-color); }
+  &--primary:hover { background: var(--default-color); color: var(--contrast-color); }
+
+  &--ghost { border-color: var(--contrast-color); color: var(--contrast-color); }
+  &--ghost:hover { background: var(--contrast-color); color: var(--default-color); }
+
+  &--light { background: var(--contrast-color); color: var(--default-color); }
+  &--light:hover { background: var(--secondary-accent); color: var(--accent-color); }
+
+  &--outline-light { border-color: color-mix(in srgb, var(--contrast-color) 60%, transparent); color: var(--contrast-color); }
+  &--outline-light:hover { border-color: var(--contrast-color); color: var(--contrast-color); }
+
+  &--outline-dark { border-color: var(--default-color); color: var(--default-color); }
+  &--outline-dark:hover { background: var(--default-color); color: var(--contrast-color); }
+}
