@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Inject, Injectable, Injector } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { NavigationEnd, Router, RouterStateSnapshot, TitleStrategy } from '@angular/router';
@@ -11,8 +11,10 @@ export const SITE_URL = 'https://sweetlodge.com.tn';
   providedIn: 'root'
 })
 export class SeoService {
+  // The router is resolved lazily in init(): SeoTitleStrategy (below) is a router
+  // dependency and injects this service, so injecting Router here would be circular.
   constructor(
-    private router: Router,
+    private injector: Injector,
     private title: Title,
     private meta: Meta,
     @Inject(DOCUMENT) private document: Document
@@ -22,8 +24,9 @@ export class SeoService {
   // Routes declare their description in `data.description`; pages with dynamic content
   // (product details) call setDescription() themselves.
   init() {
-    this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(() => {
-      let route = this.router.routerState.snapshot.root;
+    const router = this.injector.get(Router);
+    router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(() => {
+      let route = router.routerState.snapshot.root;
       while (route.firstChild) {
         route = route.firstChild;
       }
@@ -31,7 +34,7 @@ export class SeoService {
       if (description) {
         this.setDescription(description);
       }
-      const path = this.router.url.split(/[?#]/)[0];
+      const path = router.url.split(/[?#]/)[0];
       this.setCanonical(SITE_URL + path);
     });
   }
