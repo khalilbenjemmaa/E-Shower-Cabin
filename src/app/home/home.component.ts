@@ -1,50 +1,49 @@
 // bain-et-cuisine/src/app/home/home.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { PlanIconComponent } from '../shared/plan-icon/plan-icon.component';
-import { ProductService, Product } from '../services/product.service';
+import { ProductService } from '../services/product.service';
+import { WHATSAPP_QUOTE_LINK } from '../shared/product-media';
+import { RevealDirective } from '../shared/reveal.directive';
+import { HeroComponent } from './sections/hero/hero.component';
+import { CategoryExplorerComponent } from './sections/category-explorer/category-explorer.component';
+import { ProductCarouselComponent } from './sections/product-carousel/product-carousel.component';
+import { ShopTheLookComponent } from './sections/shop-the-look/shop-the-look.component';
+import { SocialProofComponent } from './sections/social-proof/social-proof.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, PlanIconComponent],
+  imports: [
+    CommonModule, FormsModule, RouterLink, RevealDirective,
+    HeroComponent, CategoryExplorerComponent, ProductCarouselComponent, ShopTheLookComponent, SocialProofComponent
+  ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  private readonly whatsappPhone = '21699809804';
-  private readonly deployedBase = 'https://sweetlodge.com.tn/#/';
+  readonly quoteLink = WHATSAPP_QUOTE_LINK;
+  readonly phoneDisplay = '+216 99 809 804';
+  readonly marqueeWords = ['Coulissante', 'Battante', 'Walk-in', 'Sur mesure', 'Finitions soignées', 'Coulissante latérale', 'Paroi fixe', 'Fabriqué à Sfax'];
 
-  // Products shown in the hero showcase and the "Best Sellers" grid.
-  featuredProduct: Product | null = null;
-  bestSellers: Product[] = [];
-  badges = ['Exclusivité', 'Nouveau', 'Promotion'];
+  // Figures shown in "Pourquoi Sweet Lodge", computed from the catalog.
+  modelCount = 0;
+  typeCount = 0;
+
+  newsletterEmail = '';
 
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.productService.getAllProducts().subscribe(products => {
-      // Hero showcase: first real product.
-      this.featuredProduct = products[0] ?? null;
-      // Best sellers: first three real products.
-      this.bestSellers = products.slice(0, 3);
-    });
+    this.productService.getAllProducts().subscribe(products => this.modelCount = products.length);
+    this.productService.getTypeGroups().subscribe(groups => this.typeCount = groups.length);
   }
 
-  // Smooth-scroll to the Best Sellers section. Using an href="#products" breaks
-  // here because the app uses hash-based routing, so the hash is consumed by the router.
-  scrollToProducts(event: Event) {
-    event.preventDefault();
-    document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  getWhatsAppLink(productName: string, imagePath: string): string {
-    const imageUrl = imagePath.startsWith('assets/') ? `${this.deployedBase}${imagePath}` : imagePath;
-    const text = encodeURIComponent(
-      `${imageUrl}\nBonjour, je suis intéressé par ce produit : ${productName}\nPouvez-vous m'indiquer le prix ?`
-    );
-
-    return `https://wa.me/${this.whatsappPhone}?text=${text}`;
+  // No mailing backend yet: open a pre-filled e-mail to Sweet Lodge with the visitor's address.
+  subscribe() {
+    const subject = encodeURIComponent('Inscription aux nouveautés Sweet Lodge');
+    const body = encodeURIComponent(`Bonjour,\n\nJe souhaite recevoir vos nouveautés et inspirations à cette adresse : ${this.newsletterEmail}\n\nMerci !`);
+    window.location.href = `mailto:Sweetlodge.mba@gmail.com?subject=${subject}&body=${body}`;
   }
 }

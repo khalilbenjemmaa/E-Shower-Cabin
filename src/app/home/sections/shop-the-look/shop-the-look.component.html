@@ -1,0 +1,50 @@
+<section class="look" aria-labelledby="look-title">
+  <div class="container">
+    <header class="look__heading" appReveal>
+      <p class="sl-eyebrow">Inspirations</p>
+      <h2 id="look-title">Adoptez le style</h2>
+      <p class="look__lead">De vraies salles de bain équipées par Sweet Lodge. Choisissez une ambiance et retrouvez la cabine qui la compose.</p>
+    </header>
+
+    <div class="look__tabs" role="tablist" aria-label="Ambiances">
+      <button *ngFor="let look of looks; let i = index" type="button" role="tab"
+              class="look__tab" [class.is-active]="i === active"
+              [attr.id]="'look-tab-' + i" [attr.aria-selected]="i === active"
+              [attr.aria-controls]="'look-panel-' + i" [attr.tabindex]="i === active ? 0 : -1"
+              (click)="active = i" (keydown)="onTabKey($event, i)">
+        {{ look.title }}
+      </button>
+    </div>
+
+    <ng-container *ngFor="let look of looks; let i = index">
+      <div class="look__panel" role="tabpanel" *ngIf="i === active"
+           [attr.id]="'look-panel-' + i" [attr.aria-labelledby]="'look-tab-' + i">
+        <a class="look__photo" [routerLink]="['/product', look.product.id]">
+          <img [src]="look.image.src" [srcset]="look.image.srcset"
+               sizes="(min-width: 992px) 55vw, 100vw" width="960" height="1200" loading="lazy"
+               [alt]="'Ambiance ' + look.title + ' : cabine de douche ' + look.product.type">
+        </a>
+
+        <div class="look__info">
+          <p class="look__mood">{{ look.mood }}</p>
+          <div class="look__product">
+            <app-plan-icon [plan]="look.product.plan"></app-plan-icon>
+            <div>
+              <p class="look__type">{{ look.product.type }} · {{ look.product.subType }}</p>
+              <h3 class="look__name">{{ look.product.name }}</h3>
+              <p class="look__desc">{{ look.product.description }}</p>
+            </div>
+          </div>
+          <div class="sl-actions">
+            <a [routerLink]="['/product', look.product.id]" class="sl-btn sl-btn--primary">
+              Voir ce modèle <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a [href]="look.whatsapp" target="_blank" rel="noopener" class="sl-btn sl-btn--outline-dark">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i> Demander le prix
+            </a>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>

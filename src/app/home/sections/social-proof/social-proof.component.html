@@ -1,0 +1,47 @@
+<section class="proof" aria-labelledby="proof-title">
+  <div class="container">
+    <header class="proof__heading" appReveal>
+      <p class="sl-eyebrow">&#64;sweet_lodge.tn</p>
+      <h2 id="proof-title">Nos chantiers, en vrai</h2>
+      <p class="proof__lead">Chaque photo est une installation réalisée par nos équipes. Retrouvez nos nouveaux chantiers sur nos réseaux.</p>
+    </header>
+
+    <ul class="proof__reviews" *ngIf="reviews.length > 0">
+      <li *ngFor="let review of reviews; let i = index" appReveal [appRevealDelay]="i * 80">
+        <figure class="review">
+          <div class="review__stars" [attr.aria-label]="review.rating + ' sur 5'">
+            <i *ngFor="let s of stars(review.rating)" class="bi" [class.bi-star-fill]="s" [class.bi-star]="!s" aria-hidden="true"></i>
+          </div>
+          <blockquote>« {{ review.text }} »</blockquote>
+          <figcaption>{{ review.name }}<span *ngIf="review.city">, {{ review.city }}</span> · avis {{ review.source }}</figcaption>
+        </figure>
+      </li>
+    </ul>
+
+    <ul class="proof__wall" (mouseenter)="setHovered(true)" (mouseleave)="setHovered(false)">
+      <li *ngFor="let src of wall; let i = index">
+        <a [href]="instagramUrl" target="_blank" rel="noopener" class="proof__tile">
+          <!-- Re-created when the photo changes, which plays the fade-in. -->
+          <img *ngFor="let current of [src]" [src]="current" width="480" height="600" loading="lazy"
+               [alt]="'Installation de cabine de douche Sweet Lodge, réalisation ' + (i + 1)">
+          <i class="bi bi-instagram" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+
+    <div class="proof__footer">
+      <div class="sl-actions">
+        <a [href]="instagramUrl" target="_blank" rel="noopener" class="sl-btn sl-btn--primary">
+          <i class="bi bi-instagram" aria-hidden="true"></i> Suivre sur Instagram
+        </a>
+        <a [href]="facebookUrl" target="_blank" rel="noopener" class="sl-btn sl-btn--outline-dark">
+          <i class="bi bi-facebook" aria-hidden="true"></i> Suivre sur Facebook
+        </a>
+      </div>
+      <button *ngIf="canAnimate" type="button" class="proof__pause" (click)="togglePause()" [attr.aria-pressed]="paused">
+        <i class="bi" [class.bi-pause-fill]="!paused" [class.bi-play-fill]="paused" aria-hidden="true"></i>
+        {{ paused ? 'Reprendre le défilement' : 'Mettre en pause' }}
+      </button>
+    </div>
+  </div>
+</section>

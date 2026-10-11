@@ -1,0 +1,46 @@
+<section class="carousel" aria-labelledby="carousel-title">
+  <div class="container">
+    <header class="carousel__heading" appReveal>
+      <div>
+        <p class="sl-eyebrow">Les plus demandés</p>
+        <h2 id="carousel-title">Nos best-sellers</h2>
+      </div>
+      <div class="carousel__controls">
+        <a routerLink="/category" class="sl-link">Tout voir <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        <button type="button" class="carousel__arrow" (click)="scroll(-1)" [disabled]="atStart" aria-label="Modèles précédents">
+          <i class="bi bi-arrow-left" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="carousel__arrow" (click)="scroll(1)" [disabled]="atEnd" aria-label="Modèles suivants">
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <ul #track class="carousel__track" (scroll)="onTrackScroll()" aria-label="Modèles best-sellers">
+    <li *ngFor="let slide of slides" class="carousel__slide">
+      <article class="card">
+        <div class="card__media">
+          <img [src]="slide.image.src" [srcset]="slide.image.srcset"
+               sizes="(min-width: 1200px) 300px, (min-width: 768px) 40vw, 75vw"
+               width="480" height="600" loading="lazy"
+               [alt]="'Cabine de douche ' + slide.product.type + ', ' + slide.product.name">
+          <span class="card__tag">{{ slide.product.subType }}</span>
+        </div>
+        <div class="card__body">
+          <div>
+            <p class="card__type">{{ slide.product.type }}</p>
+            <h3 class="card__name">
+              <a [routerLink]="['/product', slide.product.id]">{{ slide.product.name }}</a>
+            </h3>
+            <p class="card__price">Prix sur demande</p>
+          </div>
+          <a class="card__wa" [href]="slide.whatsapp" target="_blank" rel="noopener"
+             [attr.aria-label]="'Demander le prix de ' + slide.product.name + ' sur WhatsApp'">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+    </li>
+  </ul>
+</section>

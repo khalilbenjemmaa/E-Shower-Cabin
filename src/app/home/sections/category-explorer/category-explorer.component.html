@@ -1,0 +1,35 @@
+<section class="explorer" aria-labelledby="explorer-title">
+  <div class="container">
+    <header class="explorer__heading" appReveal>
+      <p class="sl-eyebrow">Nos collections</p>
+      <h2 id="explorer-title">Choisissez votre ouverture</h2>
+      <p class="explorer__lead">Quatre façons d'entrer dans votre douche. Chaque modèle est fabriqué aux dimensions de votre salle de bain.</p>
+    </header>
+
+    <div class="explorer__layout">
+      <ol class="explorer__list">
+        <li *ngFor="let cat of categories; let i = index" appReveal [appRevealDelay]="i * 80">
+          <a class="explorer__item" [class.is-active]="i === active"
+             [routerLink]="['/category', cat.slug]"
+             (mouseenter)="active = i" (focus)="active = i">
+            <img class="explorer__thumb" [src]="cat.image.src" [srcset]="cat.image.srcset"
+                 sizes="(min-width: 992px) 1px, 72vw" width="480" height="600" loading="lazy"
+                 [alt]="'Cabine de douche ' + cat.label">
+            <span class="explorer__num" aria-hidden="true">0{{ i + 1 }}</span>
+            <span class="explorer__body">
+              <span class="explorer__name">{{ cat.label }}</span>
+              <span class="explorer__blurb">{{ cat.blurb }}</span>
+            </span>
+            <span class="explorer__count">{{ cat.count }} modèles <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+          </a>
+        </li>
+      </ol>
+
+      <div class="explorer__stage" aria-hidden="true">
+        <img *ngFor="let cat of categories; let i = index" [class.is-active]="i === active"
+             [src]="cat.image.src" [srcset]="cat.image.srcset" sizes="45vw"
+             width="960" height="1200" loading="lazy" alt="">
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__media">
+    <img src="assets/img/hero/hero-1600.webp"
+         srcset="assets/img/hero/hero-800.webp 800w, assets/img/hero/hero-1600.webp 1600w"
+         sizes="100vw" width="1600" height="2000" fetchpriority="high"
+         alt="Cabine de douche sur mesure Sweet Lodge aux profilés dorés et éclairage LED">
+  </div>
+
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <p class="sl-eyebrow hero__eyebrow">Fabricant de cabines de douche · Sfax</p>
+      <h1 id="hero-title" class="hero__title">
+        <span class="hero__brand">Sweet Lodge</span>
+        L'art de la douche <em>sur mesure</em>.
+      </h1>
+      <p class="hero__lead">
+        Des cabines de douche dessinées pour votre salle de bain, fabriquées à vos dimensions et posées par nos propres équipes.
+      </p>
+      <div class="sl-actions">
+        <a routerLink="/category" class="sl-btn sl-btn--light">
+          Découvrir la collection <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a [href]="quoteLink" target="_blank" rel="noopener" class="sl-btn sl-btn--outline-light">
+          <i class="bi bi-whatsapp" aria-hidden="true"></i> Devis gratuit
+        </a>
+      </div>
+    </div>
+
+    <ul class="hero__trust" aria-label="Nos engagements">
+      <li><i class="bi bi-rulers" aria-hidden="true"></i><span><strong>Sur mesure</strong>À vos dimensions</span></li>
+      <li><i class="bi bi-tools" aria-hidden="true"></i><span><strong>Installation</strong>Par nos équipes</span></li>
+      <li><i class="bi bi-shield-check" aria-hidden="true"></i><span><strong>Garantie</strong>Pièces & main d'œuvre</span></li>
+      <li><i class="bi bi-truck" aria-hidden="true"></i><span><strong>Livraison</strong>Gratuite</span></li>
+    </ul>
+  </div>
+</section>

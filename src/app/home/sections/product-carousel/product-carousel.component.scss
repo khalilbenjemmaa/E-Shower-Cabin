@@ -1,0 +1,149 @@
+$ease: cubic-bezier(.22, .61, .36, 1);
+$muted: color-mix(in srgb, var(--default-color) 70%, transparent);
+
+:host {
+  display: block;
+  // Left edge of the Bootstrap .container at each breakpoint, so the bleeding track lines up with the heading.
+  --edge: 16px;
+  @media (min-width: 576px) { --edge: calc((100vw - 540px) / 2 + 12px); }
+  @media (min-width: 768px) { --edge: calc((100vw - 720px) / 2 + 12px); }
+  @media (min-width: 992px) { --edge: calc((100vw - 960px) / 2 + 12px); }
+  @media (min-width: 1200px) { --edge: calc((100vw - 1140px) / 2 + 12px); }
+  @media (min-width: 1400px) { --edge: calc((100vw - 1320px) / 2 + 12px); }
+}
+
+.carousel {
+  padding: clamp(4rem, 3rem + 4vw, 7.5rem) 0;
+  background: var(--surface-color);
+  overflow: hidden;
+
+  h2 { font-size: clamp(2rem, 1.3rem + 2.6vw, 3.25rem); font-weight: 600; letter-spacing: -.03em; margin: 0; }
+
+  &__heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &__controls { display: flex; align-items: center; gap: .5rem; .sl-link { margin-right: .75rem; } }
+
+  &__arrow {
+    display: none;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--default-color);
+    background: transparent;
+    color: var(--default-color);
+    font-size: 1.125rem;
+    transition: background-color .3s $ease, color .3s $ease, opacity .3s $ease;
+
+    &:hover:not(:disabled) { background: var(--default-color); color: var(--contrast-color); }
+    &:disabled { opacity: .3; cursor: default; }
+    &:focus-visible { outline: 3px solid var(--accent-color); outline-offset: 3px; }
+
+    @media (min-width: 768px) { display: grid; }
+  }
+
+  &__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(75vw, 320px);
+    gap: clamp(1rem, .75rem + 1vw, 1.5rem);
+    margin: 0;
+    padding: .5rem var(--edge) 1.5rem;
+    list-style: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--edge);
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+
+    @media (min-width: 768px) { grid-auto-columns: 40%; }
+    @media (min-width: 1200px) { grid-auto-columns: 300px; }
+  }
+
+  &__slide { scroll-snap-align: start; }
+}
+
+.card {
+  position: relative;
+  height: 100%;
+  border-radius: var(--border-radius-lg);
+  background: var(--background-color);
+  overflow: hidden;
+  transition: box-shadow .5s $ease, transform .5s $ease;
+
+  &__media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--secondary-accent);
+
+    img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s $ease; }
+  }
+
+  &__tag {
+    position: absolute;
+    top: .75rem;
+    left: .75rem;
+    padding: .3rem .7rem;
+    border-radius: 999px;
+    font-size: .8125rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--default-color);
+    background: color-mix(in srgb, var(--background-color) 88%, transparent);
+    backdrop-filter: blur(6px);
+  }
+
+  &__body { display: flex; align-items: flex-end; justify-content: space-between; gap: .75rem; padding: 1.125rem 1.25rem 1.25rem; }
+  &__type { margin: 0 0 .25rem; font-size: .8125rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-color); }
+
+  &__name {
+    margin: 0 0 .25rem;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--heading-color);
+    &::first-letter { text-transform: uppercase; }
+
+    // The whole card links to the product page.
+    a { color: inherit; &::after { content: ''; position: absolute; inset: 0; z-index: 1; } }
+  }
+
+  &__price { margin: 0; font-size: .875rem; color: $muted; }
+
+  &__wa {
+    position: relative;
+    z-index: 2;
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    color: var(--contrast-color);
+    background: var(--accent-color);
+    transition: background-color .3s $ease;
+
+    &:hover { color: var(--contrast-color); background: var(--default-color); }
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px -24px color-mix(in srgb, var(--default-color) 40%, transparent);
+    .card__media img { transform: scale(1.05); }
+  }
+
+  &:focus-within { outline: 3px solid var(--accent-color); outline-offset: 3px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .card__media img { transition: none; }
+  .card:hover, .card:hover .card__media img { transform: none; }
+}

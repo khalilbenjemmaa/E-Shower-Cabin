@@ -1,0 +1,132 @@
+// Colors from the theme tokens (assets/css/main.css). Header is ~74px on mobile, ~140px on desktop.
+$ease: cubic-bezier(.22, .61, .36, 1);
+
+:host { display: block; }
+
+.hero {
+  position: relative;
+  display: flex;
+  min-height: clamp(560px, calc(100svh - 74px), 900px);
+  padding: 0;
+  color: var(--contrast-color);
+  background: var(--default-color);
+  overflow: hidden;
+  isolation: isolate;
+
+  @media (min-width: 1200px) { min-height: clamp(620px, calc(100svh - 140px), 900px); }
+
+  &__media {
+    position: absolute;
+    inset: -8% 0 0;
+    z-index: -1;
+    transform: translate3d(0, var(--parallax, 0px), 0);
+    will-change: transform;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      animation: hero-settle 2.2s $ease both;
+    }
+
+    // Darkens the photo toward the text side so copy stays readable (WCAG AA).
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--default-color) 35%, transparent) 0%, transparent 30%),
+        linear-gradient(0deg, color-mix(in srgb, var(--default-color) 92%, transparent) 8%, color-mix(in srgb, var(--default-color) 30%, transparent) 70%);
+    }
+
+    @media (min-width: 992px) {
+      &::after {
+        background: linear-gradient(90deg, color-mix(in srgb, var(--default-color) 90%, transparent) 0%, color-mix(in srgb, var(--default-color) 55%, transparent) 45%, transparent 80%);
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 2rem;
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+
+    @media (min-width: 992px) { justify-content: center; padding-top: 4rem; padding-bottom: 7.5rem; }
+  }
+
+  &__content { max-width: 640px; animation: hero-rise 1s $ease .15s both; }
+
+  &__eyebrow { color: var(--contrast-color); opacity: .85; }
+
+  &__title {
+    margin: 0;
+    font-family: var(--heading-font);
+    font-size: clamp(2.5rem, 1.5rem + 4.6vw, 5.25rem);
+    font-weight: 600;
+    line-height: 1.02;
+    letter-spacing: -.035em;
+    color: var(--contrast-color) !important;
+
+    em { font-style: normal; font-weight: 300; }
+  }
+
+  &__brand {
+    display: block;
+    margin-bottom: .9rem;
+    font-size: clamp(1rem, .85rem + .6vw, 1.375rem);
+    font-weight: 700;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+  }
+
+  &__lead { margin: 1.5rem 0 0; max-width: 32rem; font-size: 1.125rem; line-height: 1.6; opacity: .9; }
+
+  // Mobile: 2x2 grid under the copy. Desktop: frosted glass strip pinned to the bottom.
+  &__trust {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 0;
+    padding: 1.25rem 0 0;
+    list-style: none;
+    border-top: 1px solid color-mix(in srgb, var(--contrast-color) 20%, transparent);
+
+    li { display: flex; align-items: center; gap: .75rem; font-size: .875rem; line-height: 1.35; }
+    i { font-size: 1.375rem; opacity: .9; }
+    strong { display: block; font-size: .9375rem; font-weight: 600; }
+    span { opacity: .92; }
+
+    @media (min-width: 992px) {
+      position: absolute;
+      inset: auto 0 1.75rem;
+      margin-inline: auto;
+      width: min(1140px, calc(100% - 3rem));
+      grid-template-columns: repeat(4, 1fr);
+      padding: 1.25rem 1.75rem;
+      border: 1px solid color-mix(in srgb, var(--contrast-color) 18%, transparent);
+      border-radius: var(--border-radius-lg);
+      background: color-mix(in srgb, var(--default-color) 45%, transparent);
+      backdrop-filter: blur(14px);
+      animation: hero-rise 1s $ease .45s both;
+    }
+  }
+}
+
+@keyframes hero-settle {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
+}
+
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__media { transform: none; }
+  .hero__media img, .hero__content, .hero__trust { animation: none; }
+}

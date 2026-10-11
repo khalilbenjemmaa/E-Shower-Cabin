@@ -1,0 +1,153 @@
+$ease: cubic-bezier(.22, .61, .36, 1);
+$muted: color-mix(in srgb, var(--default-color) 70%, transparent);
+
+:host { display: block; }
+
+.explorer {
+  padding: clamp(4rem, 3rem + 4vw, 7.5rem) 0;
+  background: var(--background-color);
+
+  h2 { font-size: clamp(2rem, 1.3rem + 2.6vw, 3.25rem); font-weight: 600; letter-spacing: -.03em; margin: 0; }
+
+  &__heading { max-width: 620px; margin-bottom: clamp(2rem, 1.5rem + 2vw, 3.5rem); }
+  &__lead { color: $muted; font-size: 1.0625rem; margin: 1rem 0 0; }
+
+  &__layout {
+    @media (min-width: 992px) {
+      display: grid;
+      grid-template-columns: 6fr 5fr;
+      gap: 4rem;
+      align-items: center;
+    }
+  }
+
+  // Mobile/tablet: horizontal swipe row of cards.
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(72vw, 300px);
+    gap: 1rem;
+    margin: 0 -16px;
+    padding: 0 16px .5rem;
+    scroll-padding-inline: 16px;
+
+    @media (min-width: 576px) { margin: 0 -12px; padding: 0 12px .5rem; scroll-padding-inline: 12px; }
+    list-style: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+
+    li { scroll-snap-align: start; }
+
+    @media (min-width: 992px) {
+      grid-auto-flow: row;
+      grid-auto-columns: auto;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      overflow: visible;
+      border-top: 1px solid var(--border-color);
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: .25rem .75rem;
+    height: 100%;
+    color: var(--default-color);
+
+    &:focus-visible { outline: 3px solid var(--accent-color); outline-offset: 4px; }
+
+    @media (min-width: 992px) {
+      grid-template-columns: 3.5rem 1fr auto;
+      align-items: center;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border-color);
+      transition: padding .5s $ease;
+
+      &.is-active, &:hover { padding-left: 1rem; color: var(--default-color); }
+      &.is-active .explorer__name { color: var(--accent-color); }
+      &.is-active .explorer__count i { transform: rotate(45deg); }
+    }
+  }
+
+  &__thumb {
+    grid-column: 1 / -1;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: .75rem;
+
+    @media (min-width: 992px) { display: none; }
+  }
+
+  &__num {
+    font-family: var(--heading-font);
+    font-size: .875rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    padding-top: .3rem;
+  }
+
+  &__body { display: flex; flex-direction: column; gap: .25rem; }
+
+  &__name {
+    font-family: var(--heading-font);
+    font-size: clamp(1.25rem, 1rem + 1.2vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -.02em;
+    text-transform: capitalize;
+    transition: color .4s $ease;
+  }
+
+  &__blurb { color: $muted; font-size: 1rem; }
+
+  &__count {
+    grid-column: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    font-size: .875rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-top: .25rem;
+    white-space: nowrap;
+
+    i { transition: transform .4s $ease; }
+    @media (min-width: 992px) { grid-column: 3; margin: 0; }
+  }
+
+  // Desktop: one large photo that cross-fades to the hovered type.
+  &__stage {
+    display: none;
+
+    @media (min-width: 992px) {
+      display: grid;
+      aspect-ratio: 4 / 5;
+      border-radius: 200px 200px var(--border-radius-lg) var(--border-radius-lg);
+      overflow: hidden;
+      background: var(--secondary-accent);
+
+      img {
+        grid-area: 1 / 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transform: scale(1.06);
+        transition: opacity .7s $ease, transform 1.2s $ease;
+
+        &.is-active { opacity: 1; transform: none; }
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .explorer__stage img, .explorer__item, .explorer__count i { transition: none; }
+}

@@ -1,106 +1,106 @@
 <!-- bain-et-cuisine/src/app/home/home.component.html -->
-<main class="main">
+<main class="main home">
 
-  <!-- Hero Section -->
-    <section id="hero" class="hero section">
+  <app-home-hero></app-home-hero>
 
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="content-wrapper" data-aos="fade-up" data-aos-delay="100">
-            <h1 class="hero-title">Votre Espace de Rêve Commence Ici</h1>
-            <p class="hero-description">Explorez nos collections exclusives pour la salle de bain. Design, qualité et innovation pour transformer votre intérieur.</p>
-            <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
-              <a routerLink="/category" class="btn-primary" style="background-color: #11262B !important ;">Voir Nos Produits</a>
-              <a routerLink="/category" style="background-color: #11262B !important ;" class="btn-secondary">Parcourir les Catégories</a>
-            </div>
-            <div class="features-list" data-aos="fade-up" data-aos-delay="300">
-              <div class="feature-item">
-                <i class="bi bi-truck"></i>
-                <span>Livraison Gratuite</span>
-              </div>
-              <div class="feature-item">
-                <i class="bi bi-award"></i>
-                <span>Garantie de Qualité</span>
-              </div>
-              <div class="feature-item">
-                <i class="bi bi-headset"></i>
-                <span>Support 24/7</span>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- Marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <ng-container *ngFor="let copy of [0, 1]">
+        <span *ngFor="let word of marqueeWords" class="marquee__word">{{ word }}</span>
+      </ng-container>
+    </div>
+  </div>
 
-        <div class="hero-visuals">
-          <div class="product-showcase" data-aos="fade-left" data-aos-delay="200">
-            <div class="product-card featured" *ngIf="featuredProduct" [routerLink]="['/product', featuredProduct.id]" style="cursor:pointer;">
-              <img [src]="featuredProduct.image" alt="Cabine de douche" class="img-fluid" loading="lazy">
-              <div class="product-badge">Best Seller</div>
-              <div class="product-info">
-                <h4 class="text-capitalize">{{ featuredProduct.type }} — {{ featuredProduct.name }}</h4>
-                <div class="price">
-                  <span class="sale-price">Prix sur demande WhatsApp</span>
-                </div>
+  <app-category-explorer></app-category-explorer>
 
-              </div>
-            </div>
+  <app-product-carousel></app-product-carousel>
 
+  <app-shop-the-look></app-shop-the-look>
 
-          </div>
-
-          <div class="floating-elements">
-            <a href="https://www.facebook.com/p/sweet_lodgetn-100090259461661/" target="_blank" class="floating-icon facebook" data-aos="fade-up" data-aos-delay="600">
-              <i class="bi bi-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/sweet_lodge.tn/" target="_blank" class="floating-icon instagram" data-aos="fade-up" data-aos-delay="700">
-              <i class="bi bi-instagram"></i>
-            </a>
-            <a href="https://wa.me/21699809804" target="_blank" class="floating-icon whatsapp"  data-aos-delay="700">
-              <i class="bi bi-whatsapp"></i>
-            </a>
-          </div>
-        </div>
+  <!-- Why Sweet Lodge -->
+  <section class="why" aria-labelledby="why-title">
+    <div class="container">
+      <div class="why__top">
+        <header appReveal>
+          <p class="sl-eyebrow why__eyebrow">Pourquoi Sweet Lodge</p>
+          <h2 id="why-title">Un seul artisan, du premier croquis à la dernière vis.</h2>
+        </header>
+        <dl class="why__stats" appReveal [appRevealDelay]="120">
+          <div><dt>Modèles au catalogue</dt><dd>{{ modelCount }}</dd></div>
+          <div><dt>Types d'ouverture</dt><dd>{{ typeCount }}</dd></div>
+          <div><dt>Fabriqué à vos mesures</dt><dd>100%</dd></div>
+        </dl>
       </div>
 
-    </section><!-- /Hero Section -->
+      <ul class="why__pillars">
+        <li appReveal [appRevealDelay]="0">
+          <i class="bi bi-rulers" aria-hidden="true"></i>
+          <h3>Fabrication sur mesure</h3>
+          <p>Chaque cabine est fabriquée aux dimensions exactes de votre salle de bain, avec les profilés et la finition de votre choix.</p>
+        </li>
+        <li appReveal [appRevealDelay]="80">
+          <i class="bi bi-tools" aria-hidden="true"></i>
+          <h3>Installation par nos équipes</h3>
+          <p>Une équipe formée pour une pose rapide et propre, avec un seul interlocuteur du début à la fin.</p>
+        </li>
+        <li appReveal [appRevealDelay]="160">
+          <i class="bi bi-shield-check" aria-hidden="true"></i>
+          <h3>Garantie complète</h3>
+          <p>Les pièces et la main d'œuvre sont garanties. Nous restons à vos côtés après la pose.</p>
+        </li>
+        <li appReveal [appRevealDelay]="240">
+          <i class="bi bi-truck" aria-hidden="true"></i>
+          <h3>Livraison gratuite</h3>
+          <p>Votre cabine est livrée sans frais supplémentaires, directement chez vous.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-  <!-- Promo Cards Section -->
-  <section id="promo-cards" class="promo-cards section">
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div class="row gy-4">
-        <div class="col-lg-6">
-          <div class="category-featured" data-aos="fade-right" data-aos-delay="200">
-            <div class="category-image">
-              <img src="assets/img/product/9.webp" alt="Cabine de douche Moderne" class="img-fluid">
-            </div>
-            <div class="category-content">
-              <span class="category-tag">Tendance 2025</span>
-              <h2>Nouvelle Collection Cabines de Douche</h2>
-              <p>Découvrez nos dernières cabines et finitions pour une salle de bain moderne et élégante.</p>
-              <a routerLink="/category" class="btn-shop">Explorer la Collection <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
+  <app-social-proof></app-social-proof>
 
-        <div class="col-lg-6">
-          <div class="row gy-4">
-            <div class="col-xl-6">
-              <div class="category-card cat-men" data-aos="fade-up" data-aos-delay="300">
-                <div class="category-image">
-                  <img src="assets/img/product/10.webp" alt="Cabine de douche Walk in" class="img-fluid">
-                </div>
-                <div class="category-content">
-                  <h4>Cabines de Douche</h4>
-                  <p>Coulissante · Battante · Paroi fixe</p>
-                  <a routerLink="/category" class="card-link">Découvrir <i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            <!-- More promo cards can go here -->
-          </div>
+  <!-- Consultation -->
+  <section class="consult" aria-labelledby="consult-title">
+    <img class="consult__bg" src="assets/img/product/960/21.webp"
+         srcset="assets/img/product/480/21.webp 480w, assets/img/product/960/21.webp 960w, assets/img/product/21.webp 1984w"
+         sizes="100vw" width="960" height="1200" loading="lazy" alt="">
+    <div class="container consult__inner">
+      <div class="consult__card" appReveal>
+        <p class="sl-eyebrow">Conseil gratuit</p>
+        <h2 id="consult-title">Votre projet commence par une conversation.</h2>
+        <ol class="consult__steps">
+          <li><strong>Envoyez une photo</strong> de votre salle de bain sur WhatsApp.</li>
+          <li><strong>Nous prenons les mesures</strong> et vous conseillons le bon modèle.</li>
+          <li><strong>Nous fabriquons et posons</strong> votre cabine, garantie comprise.</li>
+        </ol>
+        <div class="sl-actions">
+          <a [href]="quoteLink" target="_blank" rel="noopener" class="sl-btn sl-btn--primary">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i> Demander un devis
+          </a>
+          <a href="tel:+21699809804" class="sl-btn sl-btn--outline-dark">
+            <i class="bi bi-telephone" aria-hidden="true"></i> {{ phoneDisplay }}
+          </a>
         </div>
+        <p class="consult__address"><i class="bi bi-geo-alt" aria-hidden="true"></i> Route Gremda km 9, 3012 Sfax</p>
       </div>
     </div>
-  </section><!-- /Promo Cards Section -->
+  </section>
 
+  <!-- Newsletter -->
+  <section class="news" aria-labelledby="news-title">
+    <div class="container news__inner" appReveal>
+      <div>
+        <h2 id="news-title">Inspirations & nouveaux modèles</h2>
+        <p>Recevez nos dernières réalisations et nos nouveaux modèles en avant-première.</p>
+      </div>
+      <form class="news__form" (ngSubmit)="subscribe()" #newsForm="ngForm">
+        <label for="news-email" class="visually-hidden">Votre adresse e-mail</label>
+        <input id="news-email" type="email" name="email" [(ngModel)]="newsletterEmail"
+               required email autocomplete="email" placeholder="Votre adresse e-mail">
+        <button type="submit" class="sl-btn sl-btn--light" [disabled]="newsForm.invalid">S'inscrire</button>
+      </form>
+    </div>
+  </section>
 
 </main>
