@@ -1,8 +1,13 @@
 name: Deploy to GitHub Pages
 
+# Deploys the client demo to gh-pages. Whichever run finishes last is what's live.
+# - Push to main or redesign/home-seo deploys that branch.
+# - Rollback to main: Actions > open the last successful run on main > "Re-run all jobs".
+# - workflow_dispatch adds a "Run workflow" button once this file is on the default branch.
 on:
   push:
-    branches: [ main ]
+    branches: [ main, redesign/home-seo ]
+  workflow_dispatch:
 
 permissions:
   contents: write
