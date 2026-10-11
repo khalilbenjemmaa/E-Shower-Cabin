@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sweetlodge.com.tn/sitemap.xml

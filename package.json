@@ -5,8 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "postbuild": "node scripts/spa-fallback.mjs",
-    "predeploy": "ng build --configuration production --base-href \"/E-Shower-Cabin/\" && node scripts/spa-fallback.mjs",
+    "postbuild": "node scripts/postbuild.mjs",
+    "predeploy": "ng build --configuration production --base-href \"/E-Shower-Cabin/\" && node scripts/postbuild.mjs --demo",
     "deploy": "npx angular-cli-ghpages --dir=dist/bain-et-cuisine/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

@@ -5,6 +5,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductService, Product } from '../services/product.service';
 import { CartService } from '../services/cart.service';
 import { PlanIconComponent } from '../shared/plan-icon/plan-icon.component';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-product-details',
@@ -37,6 +38,7 @@ export class ProductDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private productService: ProductService
     , private cart: CartService
+    , private seo: SeoService
   ) {}
 
   ngOnInit() {
@@ -46,6 +48,11 @@ export class ProductDetailsComponent implements OnInit {
       if (this.productId) {
         this.productService.getProductById(parseInt(this.productId)).subscribe(product => {
           this.product = product;
+          if (product) {
+            const type = product.type.charAt(0).toUpperCase() + product.type.slice(1);
+            this.seo.setTitle(`Cabine de douche ${type} – ${product.name} | Sweet Lodge`);
+            this.seo.setDescription(product.description ?? `Cabine de douche ${product.type} sur mesure par Sweet Lodge. Demandez le prix sur WhatsApp.`);
+          }
           // Scroll to top when product changes
           window.scrollTo(0, 0);
         });

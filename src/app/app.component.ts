@@ -6,6 +6,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive, Router } from '@angular/rou
 import { FormsModule } from '@angular/forms';
 import { ProductService, Product } from './services/product.service';
 import { CartService } from './services/cart.service';
+import { SeoService } from './services/seo.service';
 import { CartComponent } from './cart/cart.component';
 import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 
@@ -34,8 +35,11 @@ export class AppComponent implements AfterViewInit {
     private productService: ProductService,
     private router: Router,
     private elementRef: ElementRef,
-    private cartService: CartService
+    private cartService: CartService,
+    seo: SeoService
   ) {
+    seo.init();
+
     // Debounce search input
     this.searchSubject.pipe(
       debounceTime(300),
