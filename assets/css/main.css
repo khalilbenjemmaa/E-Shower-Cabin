@@ -1590,6 +1590,7 @@ h6 {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 
+.footer .footer-main .footer-widget h2,
 .footer .footer-main .footer-widget h4 {
   font-size: 18px;
   font-weight: 600;
@@ -1598,6 +1599,7 @@ h6 {
   padding-bottom: 12px;
 }
 
+.footer .footer-main .footer-widget h2:after,
 .footer .footer-main .footer-widget h4:after {
   content: "";
   position: absolute;
