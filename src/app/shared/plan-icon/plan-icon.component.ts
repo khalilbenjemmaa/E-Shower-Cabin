@@ -51,7 +51,7 @@ export type PlanType =
             <ng-container *ngIf="p === 'walk-in-left' || p === 'walk-in-right'">
               <rect x="14" y="14" width="72" height="10" fill="#374151"/>  <!-- top wall -->
               <rect x="14" y="14" width="10" height="74" fill="#374151"/>  <!-- left wall -->
-              <rect x="14" y="70" width="72" height="5" fill="#3B82F6" rx="1"/>   <!-- full-length glass panel -->
+              <rect x="20" y="70" width="66" height="5" fill="#3B82F6" rx="1"/>   <!-- glass starts just before the end of the left wall -->
             </ng-container>
           </svg>
         </div>
@@ -100,7 +100,7 @@ export class PlanIconComponent {
     const cat = this.category.toLowerCase();
     if (cat.includes('niche')) return 'niche';
     if (cat.includes('angle')) return 'angle-right';
-    if (cat === 'paroi fixe' || cat.includes('Walk in')) return 'walk-in-right';
+    if (cat === 'paroi fixe' || cat.includes('walk in') || cat.includes('paroi sur baignoire') || cat.includes('parois sur baignoire')) return 'walk-in-right';
     return null;
   }
 
